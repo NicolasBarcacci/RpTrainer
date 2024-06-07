@@ -34,4 +34,11 @@ gradlePlugin {
             implementationClass = "RpComposePlugin"
         }
     }
+
+    plugins {
+        create("RpHilt") {
+            id = "RpHilt"
+            implementationClass = "RpHiltPlugin"
+        }
+    }
 }

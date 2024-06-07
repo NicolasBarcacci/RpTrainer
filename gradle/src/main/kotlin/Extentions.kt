@@ -25,6 +25,10 @@ internal fun DependencyHandler.debugImplementation(dependencyNotation: Any) {
     add("debugImplementation", dependencyNotation)
 }
 
+internal fun DependencyHandler.kapt(dependencyNotation: Any) {
+    add("kapt", dependencyNotation)
+}
+
 internal val Project.libs: VersionCatalog
     get() = this.extensions.getByType(VersionCatalogsExtension::class.java).named("libs")
 
