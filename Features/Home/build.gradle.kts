@@ -13,7 +13,7 @@ dependencies {
     implementation(project(":Ui:Molecules"))
     implementation(project(":Ui:Organisms"))
     implementation(project(":Ui:Templates"))
+    implementation(project(":Pratik"))
 
-//    implementation(libs.hilt.navigationCompose)
     implementation(libs.androidx.hilt.compose)
 }

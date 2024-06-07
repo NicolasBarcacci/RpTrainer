@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import fr.meteordesign.domain.external.getWordOfTheDay.GetWordOfTheDayUseCase
+import fr.meteordesign.domain.external.usecases.GetWordOfTheDayUseCase
 import fr.meteordesign.features.home.mappers.toUiWord
 import javax.inject.Inject
 import kotlinx.coroutines.launch

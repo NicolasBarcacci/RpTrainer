@@ -4,7 +4,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import fr.meteordesign.domain.external.getWordOfTheDay.GetWordOfTheDayUseCase
+import fr.meteordesign.domain.external.usecases.GetWordOfTheDayUseCase
 import fr.meteordesign.domain.internal.getWordOfTheDay.GetWordOfTheDayUseCaseImpl
 
 @Module
