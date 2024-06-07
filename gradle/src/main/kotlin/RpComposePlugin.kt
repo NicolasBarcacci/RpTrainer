@@ -8,6 +8,8 @@ internal class RpComposePlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
+            plugins.apply("org.jetbrains.kotlin.plugin.serialization")
+
             android {
                 buildFeatures {
                     compose = true
@@ -19,8 +21,11 @@ internal class RpComposePlugin : Plugin<Project> {
             }
 
             dependencies {
+                implementation(libs.library("kotlinx-serialization-json"))
+
                 implementation(platform(libs.library("compose-bom")))
                 implementation(libs.library("compose-material3"))
+                implementation(libs.library("compose-navigation"))
                 implementation(libs.library("compose-uiToolingPreview"))
                 debugImplementation(libs.library("compose-uiTooling"))
             }

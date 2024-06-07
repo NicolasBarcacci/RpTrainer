@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "RpTrainer"
 include(":App")
+include(":Features:Home")
 include(":Libraries:Logger")
 include(":Ui:Atoms")
 include(":Ui:Molecules")

@@ -3,20 +3,31 @@ package fr.meteordesign.rpTrainer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import fr.meteordesign.features.home.navigation.HomeNavigator
 import fr.meteordesign.ui.molecules.RpBackground
-import fr.meteordesign.ui.molecules.RpText
 import fr.meteordesign.ui.molecules.RpTheme
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var homeNavigator: HomeNavigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             RpTheme {
                 RpBackground {
-                    RpText(text = "RP Trainer")
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = homeNavigator.route) {
+                        with(homeNavigator) {
+                            buildHomeComposable()
+                        }
+                    }
                 }
             }
         }

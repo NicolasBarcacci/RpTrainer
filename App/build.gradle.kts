@@ -15,6 +15,8 @@ android {
 }
 
 dependencies {
+    // Feathers
+    implementation(project(":Features:Home"))
     // Libraries
     implementation(project(":Libraries:Logger"))
     // Ui
