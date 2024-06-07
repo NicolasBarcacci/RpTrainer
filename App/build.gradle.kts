@@ -15,8 +15,11 @@ android {
 }
 
 dependencies {
-    // Feathers
+    // Features
     implementation(project(":Features:Home"))
+    // Domain
+    implementation(project(":Domain:External"))
+    implementation(project(":Domain:Internal"))
     // Libraries
     implementation(project(":Libraries:Logger"))
     // Ui

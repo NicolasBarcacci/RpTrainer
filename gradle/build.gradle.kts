@@ -29,6 +29,13 @@ gradlePlugin {
     }
 
     plugins {
+        create("RpKotlin") {
+            id = "RpKotlin"
+            implementationClass = "RpKotlinPlugin"
+        }
+    }
+
+    plugins {
         create("RpCompose") {
             id = "RpCompose"
             implementationClass = "RpComposePlugin"
