@@ -13,7 +13,10 @@ compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 compose-uiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-uiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 
+gradle-android = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+gradle-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-

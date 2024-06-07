@@ -9,6 +9,7 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        includeBuild("gradle")
     }
 }
 dependencyResolutionManagement {
