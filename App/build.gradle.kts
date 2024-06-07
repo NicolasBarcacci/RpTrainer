@@ -1,5 +1,6 @@
 plugins {
     id("RpApplication")
+    id("RpHilt")
     id("RpCompose")
 }
 
