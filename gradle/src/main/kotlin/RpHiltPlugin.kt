@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.CommonExtension
-import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -17,9 +15,3 @@ internal class RpHiltPlugin : Plugin<Project> {
         }
     }
 }
-
-private fun Project.android(action: CommonExtension<*, *, *, *, *, *>.() -> Unit): Unit =
-    action.invoke(
-        project.extensions.findByType(CommonExtension::class.java)
-            ?: throw GradleException("The module $name is not an Android plugin")
-    )
