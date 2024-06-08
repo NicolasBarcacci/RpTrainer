@@ -13,10 +13,10 @@ class RpLogger {
     companion object {
 
         fun d(message: String, throwable: Throwable?) =
-            Timber.e(throwable, message, null)
+            Timber.d(throwable, message, null)
 
         fun w(message: String, throwable: Throwable?) =
-            Timber.e(throwable, message, null)
+            Timber.w(throwable, message, null)
 
         fun e(message: String, throwable: Throwable?) =
             Timber.e(throwable, message, null)
