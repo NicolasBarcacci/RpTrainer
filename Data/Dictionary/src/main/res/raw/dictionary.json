@@ -12,10 +12,18 @@
       "writing": "can",
       "phoneticTranscription": {
         "strong": [
-          "kæn"
+          "/kæn/"
         ],
         "weak": [
-          "kən"
+          "/kən/"
+        ]
+      }
+    },
+    {
+      "writing": "pneumonoultramicroscopicsilicovolcanoconiosis",
+      "phoneticTranscription": {
+        "strong": [
+          "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/"
         ]
       }
     }

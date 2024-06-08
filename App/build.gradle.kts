@@ -26,9 +26,7 @@ dependencies {
     // Libraries
     implementation(project(":Libraries:Logger"))
     // Ui
-    implementation(project(":Ui:Molecules"))
-    implementation(project(":Ui:Organisms"))
-    implementation(project(":Ui:Templates"))
+    implementation(project(":Ui"))
     // Misc
     implementation(project(":Pratik"))
 

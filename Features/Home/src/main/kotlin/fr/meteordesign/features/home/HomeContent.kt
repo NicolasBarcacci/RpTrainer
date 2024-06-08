@@ -1,51 +1,25 @@
 package fr.meteordesign.features.home
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import fr.meteordesign.features.home.models.PhoneticTranscriptionUiModel
-import fr.meteordesign.features.home.models.WordUiModel
-import fr.meteordesign.ui.molecules.RpText
+import androidx.compose.ui.unit.dp
+import fr.meteordesign.ui.organims.wordOfTheDay.WordOfTheDay
 
 @Composable
 internal fun HomeContent(
     state: HomeUiState,
 ) {
-    val wordOfTheDay = remember { state.wordOfTheDay }
-    WordOfTheDay(wordOfTheDay = wordOfTheDay)
-}
-
-@Composable
-private fun WordOfTheDay(wordOfTheDay: WordUiModel?) {
-    wordOfTheDay?.let {
-        Column {
-            RpText(text = wordOfTheDay.writing)
-            when (val phoneticTranscription = wordOfTheDay.phoneticTranscription) {
-                is PhoneticTranscriptionUiModel.Strong -> {
-                    Column {
-                        phoneticTranscription.strongIpaWordList.forEach {
-                            RpText(text = it)
-                        }
-                    }
-                }
-
-                is PhoneticTranscriptionUiModel.StrongWeak -> {
-                    Row {
-                        Column {
-                            phoneticTranscription.weakIpaWordList.forEach {
-                                RpText(text = it)
-                            }
-                        }
-                        Column {
-                            phoneticTranscription.strongIpaWordList.forEach {
-                                RpText(text = it)
-                            }
-                        }
-                    }
-                }
-            }
+    Box(
+        modifier = Modifier
+            .padding(24.dp),
+    ) {
+        val wordOfTheDay = remember { state.wordOfTheDay }
+        if (wordOfTheDay != null) {
+            WordOfTheDay(model = wordOfTheDay)
         }
     }
 }

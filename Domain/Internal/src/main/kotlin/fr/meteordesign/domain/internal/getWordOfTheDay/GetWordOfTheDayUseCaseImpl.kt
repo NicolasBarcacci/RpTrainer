@@ -14,7 +14,7 @@ internal class GetWordOfTheDayUseCaseImpl @Inject constructor(
             is Result.Failure -> result
             is Result.Success ->
                 result.data.wordList
-                    .firstOrNull()?.let {
+                    .randomOrNull()?.let {
                         Result.Success(it)
                     } ?: Result.Failure(Unit)
         }

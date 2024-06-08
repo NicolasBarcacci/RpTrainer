@@ -7,8 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import fr.meteordesign.features.home.navigation.HomeNavigator
-import fr.meteordesign.ui.molecules.RpBackground
-import fr.meteordesign.ui.molecules.RpTheme
+import fr.meteordesign.ui.molecules.backgrounds.RpBackground
+import fr.meteordesign.ui.molecules.themes.RpTheme
 import javax.inject.Inject
 
 @AndroidEntryPoint

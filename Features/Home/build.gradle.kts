@@ -10,9 +10,7 @@ android {
 
 dependencies {
     implementation(project(":Domain:External"))
-    implementation(project(":Ui:Molecules"))
-    implementation(project(":Ui:Organisms"))
-    implementation(project(":Ui:Templates"))
+    implementation(project(":Ui"))
     implementation(project(":Pratik"))
 
     implementation(libs.androidx.hilt.compose)

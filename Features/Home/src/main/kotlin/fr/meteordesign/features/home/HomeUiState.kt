@@ -1,8 +1,7 @@
 package fr.meteordesign.features.home
 
-import fr.meteordesign.features.home.models.WordUiModel
+import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 internal data class HomeUiState(
-    val wordOfTheDay: WordUiModel?,
+    val wordOfTheDay: WordOfTheDayUiModel?,
 )
-

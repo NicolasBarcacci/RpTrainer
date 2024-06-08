@@ -3,18 +3,18 @@ package fr.meteordesign.features.home.mappers
 import fr.meteordesign.domain.external.common.Result
 import fr.meteordesign.domain.external.models.PhoneticTranscriptionModel
 import fr.meteordesign.domain.external.models.WordModel
-import fr.meteordesign.features.home.models.PhoneticTranscriptionUiModel
-import fr.meteordesign.features.home.models.WordUiModel
 import fr.meteordesign.pratik.extensions.capitalize
+import fr.meteordesign.ui.organims.wordOfTheDay.models.PhoneticTranscriptionUiModel
+import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
-internal fun Result<WordModel, Unit>.toUiWord(): WordUiModel? =
+internal fun Result<WordModel, Unit>.toUiWord(): WordOfTheDayUiModel? =
     when (this) {
         is Result.Failure -> null
         is Result.Success -> this.data.toWordUiModel()
     }
 
-private fun WordModel.toWordUiModel(): WordUiModel =
-    WordUiModel(
+private fun WordModel.toWordUiModel(): WordOfTheDayUiModel =
+    WordOfTheDayUiModel(
         writing = this.writing
             .capitalize(),
         phoneticTranscription = this.phoneticTranscription.toPhoneticTranscriptionUiModel()

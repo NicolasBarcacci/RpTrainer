@@ -1,5 +1,6 @@
 package fr.meteordesign.libraries.logger
 
+import android.util.Log
 import timber.log.Timber
 
 fun initLogger() {
@@ -21,4 +22,8 @@ class RpLogger {
         fun e(message: String, throwable: Throwable?) =
             Timber.e(throwable, message, null)
     }
+}
+
+fun test() {
+    Log.d("T", "")
 }
