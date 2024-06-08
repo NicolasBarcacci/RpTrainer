@@ -17,6 +17,10 @@ android {
 dependencies {
     // Libraries
     implementation(project(":Libraries:Logger"))
+    // Ui
+    implementation(project(":Ui:Molecules"))
+    implementation(project(":Ui:Organisms"))
+    implementation(project(":Ui:Templates"))
 
     implementation(libs.androidx.activity.compose)
 }
