@@ -15,5 +15,8 @@ android {
 }
 
 dependencies {
+    // Libraries
+    implementation(project(":Libraries:Logger"))
+
     implementation(libs.androidx.activity.compose)
 }
