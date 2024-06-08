@@ -1,0 +1,23 @@
+{
+  "wordList": [
+    {
+      "writing": "dictionary",
+      "phoneticTranscription": {
+        "strong": [
+          "/ˈdɪk.ʃᵊn.ᵊr.i/"
+        ]
+      }
+    },
+    {
+      "writing": "can",
+      "phoneticTranscription": {
+        "strong": [
+          "kæn"
+        ],
+        "weak": [
+          "kən"
+        ]
+      }
+    }
+  ]
+}

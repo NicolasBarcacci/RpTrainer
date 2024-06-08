@@ -10,4 +10,6 @@ android {
 dependencies {
     implementation(project(":Domain:External"))
     implementation(project(":Data:Core"))
+    implementation(project(":Pratik"))
+    implementation(libs.moshi)
 }

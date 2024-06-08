@@ -1,8 +1,8 @@
 package fr.meteordesign.domain.external.usecases
 
 import fr.meteordesign.domain.external.common.Result
-import fr.meteordesign.domain.external.models.Word
+import fr.meteordesign.domain.external.models.WordModel
 
 interface GetWordOfTheDayUseCase {
-    suspend operator fun invoke(): Result<Word, Unit>
+    suspend operator fun invoke(): Result<WordModel, Unit>
 }

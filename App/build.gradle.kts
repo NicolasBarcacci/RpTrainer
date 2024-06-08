@@ -19,7 +19,7 @@ dependencies {
     implementation(project(":Features:Home"))
     // Data
     implementation(project(":Data:Core"))
-    implementation(project(":Data:Words"))
+    implementation(project(":Data:Dictionary"))
     // Domain
     implementation(project(":Domain:External"))
     implementation(project(":Domain:Internal"))
