@@ -6,7 +6,3 @@ plugins {
 android {
     namespace = "fr.meteordesign.pratik"
 }
-
-dependencies {
-    implementation(libs.moshi)
-}

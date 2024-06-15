@@ -24,7 +24,7 @@ import fr.meteordesign.ui.molecules.spacers.RpSpacerDimen
 import fr.meteordesign.ui.molecules.texts.RpText
 import fr.meteordesign.ui.molecules.texts.RpTextStyle
 import fr.meteordesign.ui.molecules.themes.RpTheme
-import fr.meteordesign.ui.organims.wordOfTheDay.models.PhoneticTranscriptionUiModel
+import fr.meteordesign.ui.organims.wordOfTheDay.models.IpaWritingUiModel
 import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 @Composable
@@ -42,14 +42,14 @@ fun WordOfTheDay(
                 ),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Header(writing = model.writing)
-            PhoneticTranscription(phoneticTranscription = model.phoneticTranscription)
+            HeaderSection(writing = model.writing)
+            IpaWritingSection(ipaWriting = model.ipaWriting)
         }
     }
 }
 
 @Composable
-private fun Header(
+private fun HeaderSection(
     writing: String,
 ) {
     Column(
@@ -71,42 +71,42 @@ private fun Header(
 }
 
 @Composable
-private fun PhoneticTranscription(
-    phoneticTranscription: PhoneticTranscriptionUiModel,
+private fun IpaWritingSection(
+    ipaWriting: IpaWritingUiModel,
 ) {
-    when (phoneticTranscription) {
-        is PhoneticTranscriptionUiModel.Strong -> {
-            MonoPhoneticTranscriptionBlock(
-                phoneticTranscription = phoneticTranscription,
+    when (ipaWriting) {
+        is IpaWritingUiModel.Strong -> {
+            MonoIpaWritingSection(
+                ipaWriting = ipaWriting,
             )
         }
 
-        is PhoneticTranscriptionUiModel.StrongWeak -> {
-            DualPhoneticTranscriptionBlock(
-                phoneticTranscription = phoneticTranscription,
+        is IpaWritingUiModel.StrongWeak -> {
+            DualIpaWritingSection(
+                ipaWriting = ipaWriting,
             )
         }
     }
 }
 
 @Composable
-private fun MonoPhoneticTranscriptionBlock(
-    phoneticTranscription: PhoneticTranscriptionUiModel.Strong,
+private fun MonoIpaWritingSection(
+    ipaWriting: IpaWritingUiModel.Strong,
 ) {
     Column {
         RpSpacer(
             orientation = RpOrientation.Vertical,
             size = RpSpacerDimen.Medium,
         )
-        PhoneticTranscriptionBlock(
-            phoneticTranscriptionList = phoneticTranscription.strongIpaWordList,
+        PhoneticTranscription(
+            ipaWriting = ipaWriting.strongForm,
         )
     }
 }
 
 @Composable
-private fun DualPhoneticTranscriptionBlock(
-    phoneticTranscription: PhoneticTranscriptionUiModel.StrongWeak,
+private fun DualIpaWritingSection(
+    ipaWriting: IpaWritingUiModel.StrongWeak,
 ) {
     Column {
         RpSpacer(
@@ -123,8 +123,8 @@ private fun DualPhoneticTranscriptionBlock(
                     style = RpTextStyle.Normal,
                     text = "Weak"
                 )
-                PhoneticTranscriptionBlock(
-                    phoneticTranscriptionList = phoneticTranscription.weakIpaWordList,
+                MultiplePhoneticTranscription(
+                    ipaWritingList = ipaWriting.weakFormList,
                 )
             }
             RpSeparator(orientation = RpOrientation.Vertical)
@@ -137,8 +137,8 @@ private fun DualPhoneticTranscriptionBlock(
                     style = RpTextStyle.Normal,
                     text = "Strong"
                 )
-                PhoneticTranscriptionBlock(
-                    phoneticTranscriptionList = phoneticTranscription.strongIpaWordList,
+                PhoneticTranscription(
+                    ipaWriting = ipaWriting.strongForm,
                 )
             }
         }
@@ -146,24 +146,24 @@ private fun DualPhoneticTranscriptionBlock(
 }
 
 @Composable
-private fun PhoneticTranscriptionBlock(
-    phoneticTranscriptionList: List<String>,
+private fun MultiplePhoneticTranscription(
+    ipaWritingList: List<String>,
 ) {
     Column(
         modifier = Modifier
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        phoneticTranscriptionList.forEach {
-            PhoneticTranscription(phoneticTranscription = it)
+        ipaWritingList.forEach {
+            PhoneticTranscription(ipaWriting = it)
         }
     }
 }
 
 @Composable
-private fun PhoneticTranscription(phoneticTranscription: String) {
+private fun PhoneticTranscription(ipaWriting: String) {
     RpText(
-        text = phoneticTranscription,
+        text = ipaWriting,
         style = RpTextStyle.Title
     )
 }
@@ -190,21 +190,21 @@ class WordOfTheDayUiModelPreviewParameterProvider :
     override val values = sequenceOf(
         WordOfTheDayUiModel(
             writing = "dictionary",
-            phoneticTranscription = PhoneticTranscriptionUiModel.Strong(
-                strongIpaWordList = listOf("/ˈdɪk.ʃᵊn.ᵊr.i/"),
+            ipaWriting = IpaWritingUiModel.Strong(
+                strongForm = "/ˈdɪk.ʃᵊn.ᵊr.i/",
             )
         ),
         WordOfTheDayUiModel(
             writing = "can",
-            phoneticTranscription = PhoneticTranscriptionUiModel.StrongWeak(
-                strongIpaWordList = listOf("/kæn/"),
-                weakIpaWordList = listOf("/kən/"),
+            ipaWriting = IpaWritingUiModel.StrongWeak(
+                strongForm = "/kæn/",
+                weakFormList = listOf("/kən/"),
             )
         ),
         WordOfTheDayUiModel(
             writing = "pneumonoultramicroscopicsilicovolcanoconiosis",
-            phoneticTranscription = PhoneticTranscriptionUiModel.Strong(
-                strongIpaWordList = listOf("/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/"),
+            ipaWriting = IpaWritingUiModel.Strong(
+                strongForm = "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/",
             )
         ),
     )

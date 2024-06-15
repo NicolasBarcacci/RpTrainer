@@ -1,30 +1,349 @@
 {
   "wordList": [
     {
+      "id": 1,
       "writing": "dictionary",
-      "phoneticTranscription": {
-        "strong": [
-          "/ˈdɪk.ʃᵊn.ᵊr.i/"
-        ]
+      "ipaWriting": {
+        "strongForm": "/ˈdɪk.ʃᵊn.ᵊr.i/"
       }
     },
     {
+      "id": 2,
       "writing": "can",
-      "phoneticTranscription": {
-        "strong": [
-          "/kæn/"
-        ],
-        "weak": [
+      "ipaWriting": {
+        "strongForm": "/kæn/",
+        "weakFormList": [
           "/kən/"
         ]
       }
     },
     {
+      "id": 3,
       "writing": "pneumonoultramicroscopicsilicovolcanoconiosis",
-      "phoneticTranscription": {
-        "strong": [
-          "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/"
+      "ipaWriting": {
+        "strongForm": "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/"
+      }
+    },
+    {
+      "id": 4,
+      "writing": "word",
+      "ipaWriting": {
+        "strongForm": "/wɜːd/"
+      }
+    },
+    {
+      "id": 5,
+      "writing": "man",
+      "ipaWriting": {
+        "strongForm": "/mæn/"
+      }
+    },
+    {
+      "id": 6,
+      "writing": "men",
+      "ipaWriting": {
+        "strongForm": "/men/"
+      }
+    },
+    {
+      "id": 7,
+      "writing": "woman",
+      "ipaWriting": {
+        "strongForm": "/ˈwʊm.ən/"
+      }
+    },
+    {
+      "id": 8,
+      "writing": "women",
+      "ipaWriting": {
+        "strongForm": "/ˈwɪm.ɪn/"
+      }
+    },
+    {
+      "id": 9,
+      "writing": "from",
+      "ipaWriting": {
+        "strongForm": "/frɒm/",
+        "weakFormList": [
+          "/frəm/"
         ]
+      }
+    },
+    {
+      "id": 10,
+      "writing": "to",
+      "ipaWriting": {
+        "strongForm": "/tuː/",
+        "weakFormList": [
+          "/tʊ/",
+          "/tu/",
+          "/tə/"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "writing": "where",
+      "ipaWriting": {
+        "strongForm": "/weəʳ/"
+      }
+    },
+    {
+      "id": 12,
+      "writing": "the",
+      "ipaWriting": {
+        "strongForm": "/ðiː/",
+        "weakFormList": [
+          "/ðə/"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "writing": "at",
+      "ipaWriting": {
+        "strongForm": "/æt/",
+        "weakFormList": [
+          "/ət/"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "writing": "but",
+      "ipaWriting": {
+        "strongForm": "/bʌt/",
+        "weakFormList": [
+          "/bət/"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "writing": "i",
+      "ipaWriting": {
+        "strongForm": "/aɪ/"
+      }
+    },
+    {
+      "id": 16,
+      "writing": "you",
+      "ipaWriting": {
+        "strongForm": "/juː/",
+        "weakFormList": [
+          "/jə/",
+          "/jʊ/"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "writing": "he",
+      "ipaWriting": {
+        "strongForm": "/hiː/",
+        "weakFormList": [
+          "/hi/",
+          "/i/"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "writing": "she",
+      "ipaWriting": {
+        "strongForm": "/ʃiː/",
+        "weakFormList": [
+          "/ʃi/"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "writing": "we",
+      "ipaWriting": {
+        "strongForm": "/wiː/",
+        "weakFormList": [
+          "/wi/"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "writing": "they",
+      "ipaWriting": {
+        "strongForm": "/ðeɪ/"
+      }
+    },
+    {
+      "id": 21,
+      "writing": "a",
+      "ipaWriting": {
+        "strongForm": "/eɪ/",
+        "weakFormList": [
+          "/ə/"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "writing": "of",
+      "ipaWriting": {
+        "strongForm": "/ɒv/",
+        "weakFormList": [
+          "/əv/"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "writing": "some",
+      "ipaWriting": {
+        "strongForm": "/sʌm/",
+        "weakFormList": [
+          "/səm/"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "writing": "love",
+      "ipaWriting": {
+        "strongForm": "/lʌv/"
+      }
+    },
+    {
+      "id": 25,
+      "writing": "one",
+      "ipaWriting": {
+        "strongForm": "/wʌn/"
+      }
+    },
+    {
+      "id": 26,
+      "writing": "hour",
+      "ipaWriting": {
+        "strongForm": "/aʊəʳ/",
+        "weakFormList": [
+          "//"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "writing": "am",
+      "ipaWriting": {
+        "strongForm": "/æm/",
+        "weakFormList": [
+          "/əm/"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "writing": "are",
+      "ipaWriting": {
+        "strongForm": "/ɑːʳ/",
+        "weakFormList": [
+          "/əʳ/"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "writing": "is",
+      "ipaWriting": {
+        "strongForm": "/ɪz/",
+        "weakFormList": [
+          "/z/",
+          "/s/"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "writing": "that",
+      "ipaWriting": {
+        "strongForm": "/ðæt/",
+        "weakFormList": [
+          "/ðət/"
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "writing": "here",
+      "ipaWriting": {
+        "strongForm": "/hɪəʳ/"
+      }
+    },
+    {
+      "id": 32,
+      "writing": "integer",
+      "ipaWriting": {
+        "strongForm": "/ˈɪn.tɪ.dʒəʳ/"
+      }
+    },
+    {
+      "id": 33,
+      "writing": "together",
+      "ipaWriting": {
+        "strongForm": "/təˈɡeð.əʳ/"
+      }
+    },
+    {
+      "id": 34,
+      "writing": "forever",
+      "ipaWriting": {
+        "strongForm": "/fəˈre.vər/"
+      }
+    },
+    {
+      "id": 35,
+      "writing": "come",
+      "ipaWriting": {
+        "strongForm": "/kʌm/"
+      }
+    },
+    {
+      "id": 36,
+      "writing": "data",
+      "ipaWriting": {
+        "strongForm": "/ˈdeɪ.tə/"
+      }
+    },
+    {
+      "id": 37,
+      "writing": "manor",
+      "ipaWriting": {
+        "strongForm": "/ˈmæn.əʳ/"
+      }
+    },
+    {
+      "id": 38,
+      "writing": "manner",
+      "ipaWriting": {
+        "strongForm": "/ˈmæn.əʳ/"
+      }
+    },
+    {
+      "id": 39,
+      "writing": "better",
+      "ipaWriting": {
+        "strongForm": "/ˈbet.ər/"
+      }
+    },
+    {
+      "id": 40,
+      "writing": "wander",
+      "ipaWriting": {
+        "strongForm": "/ˈwɒn.dər/"
+      }
+    },
+    {
+      "id": 41,
+      "writing": "wonder",
+      "ipaWriting": {
+        "strongForm": "/ˈwʌn.dər/"
       }
     }
   ]

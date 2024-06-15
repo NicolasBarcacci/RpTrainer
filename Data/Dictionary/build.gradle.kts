@@ -4,12 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "fr.meteordesign.data.words"
+    namespace = "fr.meteordesign.data.dictionary"
 }
 
 dependencies {
-    implementation(project(":Domain:External"))
+    implementation(project(":Domain"))
     implementation(project(":Data:Core"))
     implementation(project(":Pratik"))
-    implementation(libs.moshi)
+    implementation(project(":Libraries:Logger"))
+    implementation(project(":Libraries:JsonParser"))
 }

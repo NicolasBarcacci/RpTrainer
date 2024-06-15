@@ -9,9 +9,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":Domain:External"))
+    implementation(project(":Domain"))
     implementation(project(":Ui"))
     implementation(project(":Pratik"))
+    implementation(project(":Libraries:Logger"))
 
     implementation(libs.androidx.hilt.compose)
 }

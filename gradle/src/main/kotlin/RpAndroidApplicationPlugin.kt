@@ -2,7 +2,7 @@ import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.GradleException
 import org.gradle.api.Project
 
-class RpAndroidApplicationPlugin : RpAndroidBasePlugin("com.android.application") {
+internal class RpAndroidApplicationPlugin : RpAndroidBasePlugin("com.android.application") {
     override fun apply(target: Project) {
         super.apply(target)
         with(target) {

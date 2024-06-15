@@ -7,8 +7,7 @@ import org.gradle.api.plugins.JavaPluginExtension
 internal class RpKotlinPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            plugins.apply("java-library")
-            plugins.apply("org.jetbrains.kotlin.jvm")
+            plugins.apply("kotlin")
 
             java {
                 sourceCompatibility = JavaVersion.VERSION_17

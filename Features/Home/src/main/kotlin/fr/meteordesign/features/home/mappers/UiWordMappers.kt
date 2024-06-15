@@ -1,10 +1,9 @@
 package fr.meteordesign.features.home.mappers
 
-import fr.meteordesign.domain.external.common.Result
-import fr.meteordesign.domain.external.models.PhoneticTranscriptionModel
-import fr.meteordesign.domain.external.models.WordModel
-import fr.meteordesign.pratik.extensions.capitalize
-import fr.meteordesign.ui.organims.wordOfTheDay.models.PhoneticTranscriptionUiModel
+import fr.meteordesign.domain.common.Result
+import fr.meteordesign.domain.models.dictionary.IpaWritingModel
+import fr.meteordesign.domain.models.dictionary.WordModel
+import fr.meteordesign.ui.organims.wordOfTheDay.models.IpaWritingUiModel
 import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 internal fun Result<WordModel, Unit>.toUiWord(): WordOfTheDayUiModel? =
@@ -15,23 +14,22 @@ internal fun Result<WordModel, Unit>.toUiWord(): WordOfTheDayUiModel? =
 
 private fun WordModel.toWordUiModel(): WordOfTheDayUiModel =
     WordOfTheDayUiModel(
-        writing = this.writing
-            .capitalize(),
-        phoneticTranscription = this.phoneticTranscription.toPhoneticTranscriptionUiModel()
+        writing = this.writing,
+        ipaWriting = this.ipaWriting.toPhoneticTranscriptionUiModel()
     )
 
-private fun PhoneticTranscriptionModel.toPhoneticTranscriptionUiModel(): PhoneticTranscriptionUiModel =
+private fun IpaWritingModel.toPhoneticTranscriptionUiModel(): IpaWritingUiModel =
     when (this) {
-        is PhoneticTranscriptionModel.Strong -> {
-            PhoneticTranscriptionUiModel.Strong(
-                strongIpaWordList = this.strongIpaWordList,
+        is IpaWritingModel.Strong -> {
+            IpaWritingUiModel.Strong(
+                strongForm = this.strongForm,
             )
         }
 
-        is PhoneticTranscriptionModel.StrongWeak -> {
-            PhoneticTranscriptionUiModel.StrongWeak(
-                strongIpaWordList = this.strongIpaWordList,
-                weakIpaWordList = this.weakIpaWordList,
+        is IpaWritingModel.StrongWeak -> {
+            IpaWritingUiModel.StrongWeak(
+                strongForm = this.strongForm,
+                weakFormList = this.weakFormList,
             )
         }
     }
