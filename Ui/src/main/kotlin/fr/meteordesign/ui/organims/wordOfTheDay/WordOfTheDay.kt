@@ -4,27 +4,25 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
-import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import fr.meteordesign.ui.R
 import fr.meteordesign.ui._common.RpOrientation
 import fr.meteordesign.ui.atoms.dimens.RpPadding
 import fr.meteordesign.ui.atoms.dimens.padding
 import fr.meteordesign.ui.molecules.backgrounds.RpBackground
 import fr.meteordesign.ui.molecules.cards.RpCard
-import fr.meteordesign.ui.molecules.separator.RpSeparator
 import fr.meteordesign.ui.molecules.spacers.RpSpacer
 import fr.meteordesign.ui.molecules.spacers.RpSpacerDimen
 import fr.meteordesign.ui.molecules.texts.RpText
 import fr.meteordesign.ui.molecules.texts.RpTextStyle
 import fr.meteordesign.ui.molecules.themes.RpTheme
 import fr.meteordesign.ui.organims.wordOfTheDay.models.IpaWritingUiModel
+import fr.meteordesign.ui.organims.wordOfTheDay.models.WordClassUiModel
 import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 @Composable
@@ -35,7 +33,6 @@ fun WordOfTheDay(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentHeight()
                 .padding(
                     horizontal = RpPadding.Big,
                     vertical = RpPadding.Massive,
@@ -43,7 +40,7 @@ fun WordOfTheDay(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             HeaderSection(writing = model.writing)
-            IpaWritingSection(ipaWriting = model.ipaWriting)
+            IpaWritingSection(wordClassList = model.wordClassList)
         }
     }
 }
@@ -67,111 +64,94 @@ private fun HeaderSection(
             text = writing,
             style = RpTextStyle.LargeTitle,
         )
+        RpSpacer(
+            orientation = RpOrientation.Vertical,
+            size = RpSpacerDimen.Medium,
+        )
     }
 }
 
 @Composable
 private fun IpaWritingSection(
-    ipaWriting: IpaWritingUiModel,
+    wordClassList: List<WordClassUiModel>,
 ) {
-    when (ipaWriting) {
-        is IpaWritingUiModel.Strong -> {
-            MonoIpaWritingSection(
-                ipaWriting = ipaWriting,
-            )
-        }
-
-        is IpaWritingUiModel.StrongWeak -> {
-            DualIpaWritingSection(
-                ipaWriting = ipaWriting,
-            )
-        }
-    }
-}
-
-@Composable
-private fun MonoIpaWritingSection(
-    ipaWriting: IpaWritingUiModel.Strong,
-) {
-    Column {
-        RpSpacer(
-            orientation = RpOrientation.Vertical,
-            size = RpSpacerDimen.Medium,
-        )
-        PhoneticTranscription(
-            ipaWriting = ipaWriting.strongForm,
-        )
-    }
-}
-
-@Composable
-private fun DualIpaWritingSection(
-    ipaWriting: IpaWritingUiModel.StrongWeak,
-) {
-    Column {
-        RpSpacer(
-            orientation = RpOrientation.Vertical,
-            size = RpSpacerDimen.Small,
-        )
-        Row {
-            Column(
-                modifier = Modifier
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                RpText(
-                    style = RpTextStyle.Normal,
-                    text = "Weak"
-                )
-                MultiplePhoneticTranscription(
-                    ipaWritingList = ipaWriting.weakFormList,
-                )
-            }
-            RpSeparator(orientation = RpOrientation.Vertical)
-            Column(
-                modifier = Modifier
-                    .weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                RpText(
-                    style = RpTextStyle.Normal,
-                    text = "Strong"
-                )
-                PhoneticTranscription(
-                    ipaWriting = ipaWriting.strongForm,
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun MultiplePhoneticTranscription(
-    ipaWritingList: List<String>,
-) {
-    Column(
+    Row(
         modifier = Modifier
             .fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        ipaWritingList.forEach {
-            PhoneticTranscription(ipaWriting = it)
+        wordClassList.forEach {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                if (wordClassList.size > 1) {
+                    RpText(
+                        style = RpTextStyle.Normal,
+                        text = stringResource(id = it.labelResId),
+                    )
+                }
+                when (it.ipaWriting) {
+                    is IpaWritingUiModel.Strong -> IpaWriting(ipaWriting = it.ipaWriting)
+                    is IpaWritingUiModel.WeakStrong -> IpaWriting(ipaWriting = it.ipaWriting)
+                }
+            }
         }
     }
 }
 
 @Composable
-private fun PhoneticTranscription(ipaWriting: String) {
+fun IpaWriting(ipaWriting: IpaWritingUiModel.Strong) {
     RpText(
-        text = ipaWriting,
-        style = RpTextStyle.Title
+        style = RpTextStyle.Title,
+        text = ipaWriting.strongForm,
     )
+}
+
+@Composable
+fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
+    Row {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            RpText(
+                style = RpTextStyle.Normal,
+                text = stringResource(id = R.string.word_form_weak),
+            )
+            ipaWriting.weakFormList.forEach {
+                RpText(
+                    style = RpTextStyle.Title,
+                    text = it,
+                )
+            }
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            RpText(
+                style = RpTextStyle.Normal,
+                text = stringResource(id = R.string.word_form_strong),
+            )
+            RpText(
+                style = RpTextStyle.Title,
+                text = ipaWriting.strongForm,
+            )
+        }
+    }
 }
 
 @Preview
 @Composable
 private fun Preview(
-    @PreviewParameter(WordOfTheDayUiModelPreviewParameterProvider::class) wordOfTheDayUiModel: WordOfTheDayUiModel,
+    @PreviewParameter(WordOfTheDayUiModelPreviewProvider::class)
+    wordOfTheDayUiModel: WordOfTheDayUiModel,
 ) {
     RpTheme {
         RpBackground {
@@ -183,29 +163,4 @@ private fun Preview(
             }
         }
     }
-}
-
-class WordOfTheDayUiModelPreviewParameterProvider :
-    PreviewParameterProvider<WordOfTheDayUiModel> {
-    override val values = sequenceOf(
-        WordOfTheDayUiModel(
-            writing = "dictionary",
-            ipaWriting = IpaWritingUiModel.Strong(
-                strongForm = "/ˈdɪk.ʃᵊn.ᵊr.i/",
-            )
-        ),
-        WordOfTheDayUiModel(
-            writing = "can",
-            ipaWriting = IpaWritingUiModel.StrongWeak(
-                strongForm = "/kæn/",
-                weakFormList = listOf("/kən/"),
-            )
-        ),
-        WordOfTheDayUiModel(
-            writing = "pneumonoultramicroscopicsilicovolcanoconiosis",
-            ipaWriting = IpaWritingUiModel.Strong(
-                strongForm = "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/",
-            )
-        ),
-    )
 }

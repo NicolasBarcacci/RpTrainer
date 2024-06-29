@@ -8,7 +8,7 @@ sealed class IpaWritingUiModel(
         override val strongForm: String,
     ) : IpaWritingUiModel(strongForm)
 
-    data class StrongWeak(
+    data class WeakStrong(
         override val strongForm: String,
         val weakFormList: List<String>,
     ) : IpaWritingUiModel(strongForm)

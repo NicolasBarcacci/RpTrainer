@@ -28,8 +28,7 @@ fun RpCard(
 ) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .height(IntrinsicSize.Min),
+            .fillMaxWidth(),
         shape = RpShape.RoundedCorner8dp.value,
         colors = CardDefaults.cardColors(
             containerColor = RpPalette.CardBackground.color(),
