@@ -34,8 +34,8 @@ internal fun DependencyHandler.debugImplementation(dependencyNotation: Any) {
     add("debugImplementation", dependencyNotation)
 }
 
-internal fun DependencyHandler.kapt(dependencyNotation: Any) {
-    add("kapt", dependencyNotation)
+internal fun DependencyHandler.ksp(dependencyNotation: Any) {
+    add("ksp", dependencyNotation)
 }
 
 internal val Project.libs: VersionCatalog

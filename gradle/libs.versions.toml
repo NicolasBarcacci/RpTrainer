@@ -4,6 +4,7 @@ agp = "8.3.2"
 composeBom = "2024.06.00"
 composeNavigation = "2.8.0-beta05"
 kotlin = "2.0.0"
+ksp = "2.0.0-1.0.22"
 hiltNavigationCompose = "1.2.0"
 kotlinxSerializationJson = "1.6.3"
 hilt = "2.51.1"
@@ -49,3 +50,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
