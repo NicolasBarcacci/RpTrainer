@@ -20,8 +20,8 @@ internal fun Project.applyKotlinHilt() {
 }
 
 private fun Project.applyHilt() {
-    plugins.apply("kotlin-kapt")
+    plugins.apply("com.google.devtools.ksp")
     dependencies {
-        kapt(libs.library("hilt-android-compiler"))
+        ksp(libs.library("hilt-android-compiler"))
     }
 }

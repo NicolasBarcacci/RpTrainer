@@ -591,6 +591,17 @@
           }
         }
       ]
+    },
+    {
+      "writing": "wood",
+      "wordClassList": [
+        {
+          "type": "NOUN",
+          "ipaWriting": {
+            "strongForm": "/wʊd/"
+          }
+        }
+      ]
     }
   ]
 }
