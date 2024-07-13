@@ -1,6 +1,6 @@
 plugins {
-    id("RpAndroidLibrary")
-    id("RpHilt")
+    id("RptAndroidLibrary")
+    id("RptData")
 }
 
 android {
@@ -8,8 +8,8 @@ android {
 }
 
 dependencies {
-    implementation(projects.domain)
     implementation(projects.data.core)
+    implementation(projects.domain)
     implementation(projects.libraries.logger)
     implementation(projects.libraries.jsonParser)
 }

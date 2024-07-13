@@ -1,6 +1,6 @@
 plugins {
-    id("RpAndroidLibrary")
-    id("RpHilt")
+    id("RptAndroidLibrary")
+    id("RptLibrary")
 }
 
 android {

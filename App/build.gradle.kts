@@ -1,14 +1,13 @@
 plugins {
-    id("RpAndroidApplication")
-    id("RpHilt")
-    id("RpCompose")
+    id("RptAndroidApplication")
+    id("RptApplication")
 }
 
 android {
-    namespace = "fr.meteordesign.rpTrainer"
+    namespace = "fr.meteordesign.rpt"
 
     defaultConfig {
-        applicationId = "fr.meteordesign.rpTrainer"
+        applicationId = "fr.meteordesign.rpt"
         versionCode = 1
         versionName = "1.0"
     }
@@ -22,10 +21,8 @@ dependencies {
     implementation(projects.data.dictionary)
     // Domain
     implementation(projects.domain)
+    // Design System
+    implementation(projects.designSystem)
     // Libraries
     implementation(projects.libraries.logger)
-    // Ui
-    implementation(projects.ui)
-
-    implementation(libs.androidx.activity.compose)
 }

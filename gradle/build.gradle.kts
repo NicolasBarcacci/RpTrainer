@@ -14,38 +14,71 @@ dependencies {
 }
 
 gradlePlugin {
+
+    // Android Plugins
+
     plugins {
-        create("RpAndroidApplication") {
-            id = "RpAndroidApplication"
-            implementationClass = "RpAndroidApplicationPlugin"
+        create("RptAndroidApplication") {
+            id = "RptAndroidApplication"
+            implementationClass = "plugins.base.RptAndroidApplicationPlugin"
         }
     }
 
     plugins {
-        create("RpAndroidLibrary") {
-            id = "RpAndroidLibrary"
-            implementationClass = "RpAndroidLibraryPlugin"
+        create("RptAndroidLibrary") {
+            id = "RptAndroidLibrary"
+            implementationClass = "plugins.base.RptAndroidLibraryPlugin"
         }
     }
 
     plugins {
-        create("RpKotlin") {
-            id = "RpKotlin"
-            implementationClass = "RpKotlinPlugin"
+        create("RptKotlin") {
+            id = "RptKotlin"
+            implementationClass = "plugins.base.RptKotlinPlugin"
+        }
+    }
+
+    // Scope Plugins
+
+    plugins {
+        create("RptApplication") {
+            id = "RptApplication"
+            implementationClass = "plugins.scope.RptApplicationPlugin"
         }
     }
 
     plugins {
-        create("RpCompose") {
-            id = "RpCompose"
-            implementationClass = "RpComposePlugin"
+        create("RptFeature") {
+            id = "RptFeature"
+            implementationClass = "plugins.scope.RptFeaturePlugin"
         }
     }
 
     plugins {
-        create("RpHilt") {
-            id = "RpHilt"
-            implementationClass = "RpHiltPlugin"
+        create("RptData") {
+            id = "RptData"
+            implementationClass = "plugins.scope.RptDataPlugin"
+        }
+    }
+
+    plugins {
+        create("RptDomain") {
+            id = "RptDomain"
+            implementationClass = "plugins.scope.RptDomainPlugin"
+        }
+    }
+
+    plugins {
+        create("RptDesignSystem") {
+            id = "RptDesignSystem"
+            implementationClass = "plugins.scope.RptDesignSystemPlugin"
+        }
+    }
+
+    plugins {
+        create("RptLibrary") {
+            id = "RptLibrary"
+            implementationClass = "plugins.scope.RptLibraryPlugin"
         }
     }
 }

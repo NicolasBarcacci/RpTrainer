@@ -6,10 +6,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import fr.meteordesign.ui.organims.wordOfTheDay.WordOfTheDay
-import fr.meteordesign.ui.organims.wordOfTheDay.models.IpaWritingUiModel
-import fr.meteordesign.ui.organims.wordOfTheDay.models.WordClassUiModel
-import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDay
+import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 @Composable
 internal fun HomeContent(
@@ -34,7 +34,7 @@ private fun Preview() {
                 writing = "Lorem Ipsum",
                 wordClassList = listOf(
                     WordClassUiModel(
-                        labelResId = fr.meteordesign.ui.R.string.word_type_undefined,
+                        labelResId = fr.meteordesign.designSystem.R.string.word_type_undefined,
                         ipaWriting = IpaWritingUiModel.Strong("/Lorem Ipsum/"),
                     )
                 )
