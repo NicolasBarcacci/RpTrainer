@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".RpApplication"
+        android:name=".RptApplication"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"

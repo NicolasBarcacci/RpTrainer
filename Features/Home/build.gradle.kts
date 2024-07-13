@@ -1,7 +1,6 @@
 plugins {
-    id("RpAndroidLibrary")
-    id("RpHilt")
-    id("RpCompose")
+    id("RptAndroidLibrary")
+    id("RptFeature")
 }
 
 android {
@@ -10,6 +9,6 @@ android {
 
 dependencies {
     implementation(projects.domain)
-    implementation(projects.ui)
+    implementation(projects.designSystem)
     implementation(projects.libraries.logger)
 }

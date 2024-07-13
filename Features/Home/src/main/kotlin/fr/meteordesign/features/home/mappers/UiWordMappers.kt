@@ -4,10 +4,10 @@ import fr.meteordesign.domain.common.Result
 import fr.meteordesign.domain.models.dictionary.IpaWritingModel
 import fr.meteordesign.domain.models.dictionary.WordClassModel
 import fr.meteordesign.domain.models.dictionary.WordModel
-import fr.meteordesign.ui.R
-import fr.meteordesign.ui.organims.wordOfTheDay.models.IpaWritingUiModel
-import fr.meteordesign.ui.organims.wordOfTheDay.models.WordClassUiModel
-import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
+import fr.meteordesign.designSystem.R
+import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 internal fun Result<WordModel, Unit>.toWordOfTheDayUiModel(): WordOfTheDayUiModel? =
     when (this) {
