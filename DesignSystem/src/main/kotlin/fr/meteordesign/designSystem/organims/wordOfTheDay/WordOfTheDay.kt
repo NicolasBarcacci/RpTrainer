@@ -1,41 +1,44 @@
 package fr.meteordesign.designSystem.organims.wordOfTheDay
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import fr.meteordesign.designSystem.R
-import fr.meteordesign.designSystem._common.RpOrientation
-import fr.meteordesign.designSystem.atoms.dimens.RpPadding
-import fr.meteordesign.designSystem.atoms.dimens.padding
-import fr.meteordesign.designSystem.molecules.backgrounds.RpBackground
-import fr.meteordesign.designSystem.molecules.cards.RpCard
-import fr.meteordesign.designSystem.molecules.spacers.RpSpacer
-import fr.meteordesign.designSystem.molecules.spacers.RpSpacerDimen
-import fr.meteordesign.designSystem.molecules.texts.RpText
+import fr.meteordesign.designSystem._common.previews.RptPreview
+import fr.meteordesign.designSystem.atoms.paddings.RptPadding
+import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
+import fr.meteordesign.designSystem.molecules.cards.RptCard
+import fr.meteordesign.designSystem.molecules.spacers.RptSpacer
+import fr.meteordesign.designSystem.molecules.spacers.RptSpacerSize
+import fr.meteordesign.designSystem.molecules.spacers.RptSpacerStyle
 import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
-import fr.meteordesign.designSystem.molecules.themes.RpTheme
+import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.themes.RptTheme
 import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
 import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
 import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
 @Composable
 fun WordOfTheDay(
+    modifier: Modifier = Modifier,
     model: WordOfTheDayUiModel,
 ) {
-    RpCard {
+    RptCard(
+        modifier = modifier,
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    horizontal = RpPadding.Big,
-                    vertical = RpPadding.Massive,
+                    horizontal = RptPadding.Big.dp(),
+                    vertical = RptPadding.Massive.dp(),
                 ),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -52,21 +55,21 @@ private fun HeaderSection(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        RpText(
+        RptText(
             text = stringResource(R.string.word_of_the_day),
             style = RpTextStyle.Normal,
         )
-        RpSpacer(
-            orientation = RpOrientation.Vertical,
-            size = RpSpacerDimen.Big,
+        RptSpacer(
+            style = RptSpacerStyle.Vertical,
+            size = RptSpacerSize.Big,
         )
-        RpText(
+        RptText(
             text = writing,
             style = RpTextStyle.LargeTitle,
         )
-        RpSpacer(
-            orientation = RpOrientation.Vertical,
-            size = RpSpacerDimen.Medium,
+        RptSpacer(
+            style = RptSpacerStyle.Vertical,
+            size = RptSpacerSize.Medium,
         )
     }
 }
@@ -87,7 +90,7 @@ private fun IpaWritingSection(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 if (wordClassList.size > 1) {
-                    RpText(
+                    RptText(
                         style = RpTextStyle.Normal,
                         text = stringResource(id = it.labelResId),
                     )
@@ -103,7 +106,7 @@ private fun IpaWritingSection(
 
 @Composable
 fun IpaWriting(ipaWriting: IpaWritingUiModel.Strong) {
-    RpText(
+    RptText(
         style = RpTextStyle.Title,
         text = ipaWriting.strongForm,
     )
@@ -118,12 +121,12 @@ fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
                 .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            RpText(
+            RptText(
                 style = RpTextStyle.Normal,
                 text = stringResource(id = R.string.word_form_weak),
             )
             ipaWriting.weakFormList.forEach {
-                RpText(
+                RptText(
                     style = RpTextStyle.Title,
                     text = it,
                 )
@@ -135,11 +138,11 @@ fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
                 .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            RpText(
+            RptText(
                 style = RpTextStyle.Normal,
                 text = stringResource(id = R.string.word_form_strong),
             )
-            RpText(
+            RptText(
                 style = RpTextStyle.Title,
                 text = ipaWriting.strongForm,
             )
@@ -147,20 +150,22 @@ fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
     }
 }
 
-@Preview
 @Composable
+@RptPreview
 private fun Preview(
     @PreviewParameter(WordOfTheDayUiModelPreviewProvider::class)
     wordOfTheDayUiModel: WordOfTheDayUiModel,
 ) {
-    RpTheme {
-        RpBackground {
-            Box(
+    RptTheme {
+        RptBackground(
+            modifier = Modifier
+                .wrapContentSize(),
+        ) {
+            WordOfTheDay(
                 modifier = Modifier
-                    .padding(RpPadding.Big)
-            ) {
-                WordOfTheDay(wordOfTheDayUiModel)
-            }
+                    .padding(RptPadding.Big.dp()),
+                model = wordOfTheDayUiModel,
+            )
         }
     }
 }

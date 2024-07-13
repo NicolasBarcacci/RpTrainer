@@ -1,11 +1,16 @@
 package fr.meteordesign.features.home
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import fr.meteordesign.designSystem.R
+import fr.meteordesign.designSystem._common.previews.RptPreview
+import fr.meteordesign.designSystem.atoms.paddings.RptPadding
+import fr.meteordesign.designSystem.molecules.scaffolds.RptScaffold
+import fr.meteordesign.designSystem.organims.topBar.RptTopAppBar
+import fr.meteordesign.designSystem.organims.topBar.RptTopAppBarNavigationMode
 import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDay
 import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
 import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
@@ -13,32 +18,53 @@ import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiM
 
 @Composable
 internal fun HomeContent(
+    modifier: Modifier = Modifier,
     state: HomeUiState,
+    onNavigationPress: () -> Unit,
 ) {
-    Box(
-        modifier = Modifier
-            .padding(24.dp),
-    ) {
-        state.wordOfTheDay?.let {
-            WordOfTheDay(model = it)
+    RptScaffold(
+        modifier = modifier,
+        topBar = {
+            RptTopAppBar(
+                titleResId = R.string.app_name,
+                navigationMode = RptTopAppBarNavigationMode.Drawer,
+                onNavigationPress = onNavigationPress,
+            )
+        }
+    ) { padding ->
+        Box(
+            modifier = Modifier
+                .padding(padding),
+        ) {
+            Column {
+                state.wordOfTheDay?.let {
+                    WordOfTheDay(
+                        modifier = Modifier
+                            .padding(top = RptPadding.Big.dp())
+                            .padding(horizontal = RptPadding.Big.dp()),
+                        model = it
+                    )
+                }
+            }
         }
     }
 }
 
-@Preview
 @Composable
+@RptPreview
 private fun Preview() {
     HomeContent(
-        HomeUiState(
+        state = HomeUiState(
             wordOfTheDay = WordOfTheDayUiModel(
                 writing = "Lorem Ipsum",
                 wordClassList = listOf(
                     WordClassUiModel(
-                        labelResId = fr.meteordesign.designSystem.R.string.word_type_undefined,
+                        labelResId = R.string.word_type_undefined,
                         ipaWriting = IpaWritingUiModel.Strong("/Lorem Ipsum/"),
                     )
                 )
             ),
-        )
+        ),
+        onNavigationPress = {},
     )
 }
