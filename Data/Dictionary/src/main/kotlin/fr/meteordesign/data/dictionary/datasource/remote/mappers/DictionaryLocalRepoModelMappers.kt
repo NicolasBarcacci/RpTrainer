@@ -1,27 +1,27 @@
 package fr.meteordesign.data.dictionary.datasource.remote.mappers
 
-import fr.meteordesign.data.dictionary.datasource.remote.models.DictionaryRemoteRepoModel
-import fr.meteordesign.data.dictionary.datasource.remote.models.IpaWritingRemoteRepoModel
+import fr.meteordesign.data.dictionary.datasource.remote.models.DictionaryRemoteModel
+import fr.meteordesign.data.dictionary.datasource.remote.models.IpaWritingRemoteModel
 import fr.meteordesign.data.dictionary.datasource.remote.models.WordClassRemoteModel
-import fr.meteordesign.data.dictionary.datasource.remote.models.WordLocalRemoteModel
+import fr.meteordesign.data.dictionary.datasource.remote.models.WordRemoteModel
 import fr.meteordesign.domain.models.dictionary.DictionaryModel
 import fr.meteordesign.domain.models.dictionary.IpaWritingModel
 import fr.meteordesign.domain.models.dictionary.WordClassModel
 import fr.meteordesign.domain.models.dictionary.WordModel
 
-internal fun DictionaryRemoteRepoModel.toDictionaryModel(): DictionaryModel =
+internal fun DictionaryRemoteModel.toDictionaryModel(): DictionaryModel =
     DictionaryModel(
         this.wordList.map { it.toWordModel() },
     )
 
-private fun WordLocalRemoteModel.toWordModel(): WordModel =
+private fun WordRemoteModel.toWordModel(): WordModel =
     WordModel(
         writing = this.writing,
-        wordClassList = this.wordClassList.map { it.toFormModel() },
+        wordClassList = this.wordClassList.map { it.toWordClassModel() },
     )
 
-private fun WordClassRemoteModel.toFormModel(): WordClassModel {
-    val ipaWriting = this.ipaWriting.toPhoneticTranscriptionModel()
+private fun WordClassRemoteModel.toWordClassModel(): WordClassModel {
+    val ipaWriting = this.ipaWriting.toIpaWritingModel()
     return when (type) {
         WordClassRemoteModel.Type.ADJECTIVE -> WordClassModel.Adjective(ipaWriting)
         WordClassRemoteModel.Type.ADVERB -> WordClassModel.Adverb(ipaWriting)
@@ -39,7 +39,7 @@ private fun WordClassRemoteModel.toFormModel(): WordClassModel {
     }
 }
 
-private fun IpaWritingRemoteRepoModel.toPhoneticTranscriptionModel(): IpaWritingModel =
+private fun IpaWritingRemoteModel.toIpaWritingModel(): IpaWritingModel =
     if (this.weakFormList == null) {
         IpaWritingModel.Strong(
             strongForm = this.strongForm,

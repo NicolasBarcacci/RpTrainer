@@ -1,6 +1,7 @@
 package fr.meteordesign.domain.usecases
 
 import fr.meteordesign.domain.common.Result
+import fr.meteordesign.domain.common.mapSuccess
 import fr.meteordesign.domain.models.dictionary.WordModel
 import fr.meteordesign.domain.repositories.DictionaryRepository
 import javax.inject.Inject
@@ -10,12 +11,10 @@ class GetWordOfTheDayUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(): Result<WordModel, Unit> =
-        when (val result = dictionaryRepository.getDictionary()) {
-            is Result.Failure -> result
-            is Result.Success ->
-                result.data.wordList
-                    .randomOrNull()?.let {
-                        Result.Success(it)
-                    } ?: Result.Failure(Unit)
-        }
+        dictionaryRepository.getDictionary()
+            .mapSuccess { data ->
+                data.wordList.randomOrNull()?.let {
+                    Result.Success(it)
+                } ?: Result.Failure(Unit)
+            }
 }

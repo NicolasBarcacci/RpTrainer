@@ -1,9 +1,9 @@
 package fr.meteordesign.data.dictionary.datasource.remote
 
+import fr.meteordesign.data.dictionary.datasource.remote.models.DictionaryRemoteModel
 import fr.meteordesign.domain.common.Result
-import fr.meteordesign.domain.models.dictionary.DictionaryModel
 
 internal interface DictionaryRemoteDataSource {
 
-    fun getDictionary(): Result<DictionaryModel, Unit>
+    suspend fun getDictionary(): Result<DictionaryRemoteModel, Unit>
 }

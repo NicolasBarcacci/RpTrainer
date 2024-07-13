@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 internal data class WordClassRemoteModel(
     val type: Type,
-    val ipaWriting: IpaWritingRemoteRepoModel,
+    val ipaWriting: IpaWritingRemoteModel,
 ) {
 
     enum class Type {

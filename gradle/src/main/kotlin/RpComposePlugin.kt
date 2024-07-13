@@ -26,6 +26,7 @@ internal class RpComposePlugin : Plugin<Project> {
                 implementation(platform(libs.library("compose-bom")))
                 implementation(libs.library("compose-material3"))
                 implementation(libs.library("compose-navigation"))
+                implementation(libs.library("compose-navigation-hilt"))
                 implementation(libs.library("compose-uiToolingPreview"))
                 debugImplementation(libs.library("compose-uiTooling"))
             }

@@ -1,13 +1,12 @@
 package fr.meteordesign.features.home
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.meteordesign.domain.usecases.GetWordOfTheDayUseCase
-import fr.meteordesign.features.home.mappers.toUiWord
+import fr.meteordesign.features.home.mappers.toWordOfTheDayUiModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -15,18 +14,20 @@ import javax.inject.Inject
 internal class HomeViewModel @Inject constructor(
     private val getWordOfTheDayUseCase: GetWordOfTheDayUseCase,
 ) : ViewModel() {
-    var state by mutableStateOf(
+
+    private val _state = MutableStateFlow(
         HomeUiState(
             wordOfTheDay = null
-        ),
+        )
     )
-        private set
+    val state: StateFlow<HomeUiState>
+        get() = _state
 
     init {
         viewModelScope.launch {
-            state = HomeUiState(
+            _state.value = HomeUiState(
                 wordOfTheDay = getWordOfTheDayUseCase.invoke()
-                    .toUiWord()
+                    .toWordOfTheDayUiModel()
             )
         }
     }

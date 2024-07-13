@@ -1,11 +1,11 @@
-package fr.meteordesign.pratik.tools._di
+package fr.meteordesign.data.core.tools._di
 
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import fr.meteordesign.pratik.tools.RawFileReader
-import fr.meteordesign.pratik.tools.RawFileReaderImpl
+import fr.meteordesign.data.core.tools.RawFileReader
+import fr.meteordesign.data.core.tools.RawFileReaderImpl
 
 @Module
 @InstallIn(SingletonComponent::class)

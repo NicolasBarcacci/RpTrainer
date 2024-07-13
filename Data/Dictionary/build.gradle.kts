@@ -1,5 +1,5 @@
 plugins {
-    id("RpLibrary")
+    id("RpAndroidLibrary")
     id("RpHilt")
 }
 
@@ -8,9 +8,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":Domain"))
-    implementation(project(":Data:Core"))
-    implementation(project(":Pratik"))
-    implementation(project(":Libraries:Logger"))
-    implementation(project(":Libraries:JsonParser"))
+    implementation(projects.domain)
+    implementation(projects.data.core)
+    implementation(projects.libraries.logger)
+    implementation(projects.libraries.jsonParser)
 }

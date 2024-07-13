@@ -1,5 +1,5 @@
 plugins {
-    id("RpLibrary")
+    id("RpAndroidLibrary")
     id("RpHilt")
     id("RpCompose")
 }
@@ -9,10 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":Domain"))
-    implementation(project(":Ui"))
-    implementation(project(":Pratik"))
-    implementation(project(":Libraries:Logger"))
-
-    implementation(libs.androidx.hilt.compose)
+    implementation(projects.domain)
+    implementation(projects.ui)
+    implementation(projects.libraries.logger)
 }

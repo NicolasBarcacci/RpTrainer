@@ -1,6 +1,5 @@
 package fr.meteordesign.features.home.mappers
 
-import androidx.annotation.StringRes
 import fr.meteordesign.domain.common.Result
 import fr.meteordesign.domain.models.dictionary.IpaWritingModel
 import fr.meteordesign.domain.models.dictionary.WordClassModel
@@ -10,13 +9,13 @@ import fr.meteordesign.ui.organims.wordOfTheDay.models.IpaWritingUiModel
 import fr.meteordesign.ui.organims.wordOfTheDay.models.WordClassUiModel
 import fr.meteordesign.ui.organims.wordOfTheDay.models.WordOfTheDayUiModel
 
-internal fun Result<WordModel, Unit>.toUiWord(): WordOfTheDayUiModel? =
+internal fun Result<WordModel, Unit>.toWordOfTheDayUiModel(): WordOfTheDayUiModel? =
     when (this) {
         is Result.Failure -> null
-        is Result.Success -> this.data.toWordUiModel()
+        is Result.Success -> this.data.toWordOfTheDayUiModel()
     }
 
-private fun WordModel.toWordUiModel(): WordOfTheDayUiModel =
+private fun WordModel.toWordOfTheDayUiModel(): WordOfTheDayUiModel =
     WordOfTheDayUiModel(
         writing = this.writing,
         wordClassList = this.wordClassList.map {

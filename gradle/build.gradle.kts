@@ -15,15 +15,15 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        create("RpApplication") {
-            id = "RpApplication"
+        create("RpAndroidApplication") {
+            id = "RpAndroidApplication"
             implementationClass = "RpAndroidApplicationPlugin"
         }
     }
 
     plugins {
-        create("RpLibrary") {
-            id = "RpLibrary"
+        create("RpAndroidLibrary") {
+            id = "RpAndroidLibrary"
             implementationClass = "RpAndroidLibraryPlugin"
         }
     }

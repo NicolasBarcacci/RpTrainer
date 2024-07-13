@@ -1,3 +1,4 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     repositories {
         google {
@@ -28,5 +29,4 @@ include(":Data:Dictionary")
 include(":Domain")
 include(":Libraries:Logger")
 include(":Ui")
-include(":Pratik")
 include(":Libraries:JsonParser")

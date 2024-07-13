@@ -1,5 +1,5 @@
 plugins {
-    id("RpLibrary")
+    id("RpAndroidLibrary")
     id("RpHilt")
 }
 
@@ -8,6 +8,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":Libraries:Logger"))
+    implementation(projects.libraries.logger)
     api(libs.moshi)
 }
