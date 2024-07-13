@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="word_form_weak">Weak</string>
+    <string name="word_form_strong">Strong</string>
+
+    <string name="word_type_adjective">adjective</string>
+    <string name="word_type_adverb">adverb</string>
+    <string name="word_type_article">article</string>
+    <string name="word_type_conjunction">conjunction</string>
+    <string name="word_type_determiner">determiner</string>
+    <string name="word_type_interjection">interjection</string>
+    <string name="word_type_modalVerb">modal verb</string>
+    <string name="word_type_noun">noun</string>
+    <string name="word_type_numeral">numeral</string>
+    <string name="word_type_preposition">preposition</string>
+    <string name="word_type_pronoun">pronoun</string>
+    <string name="word_type_verb">verb</string>
+    <string name="word_type_undefined">TBD</string>
+</resources>

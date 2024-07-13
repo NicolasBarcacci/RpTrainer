@@ -1,3 +1,4 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     repositories {
         google {
@@ -22,8 +23,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "RpTrainer"
 include(":App")
+include(":Features:Home")
+include(":Data:Core")
+include(":Data:Dictionary")
+include(":Domain")
 include(":Libraries:Logger")
-include(":Ui:Atoms")
-include(":Ui:Molecules")
-include(":Ui:Organisms")
-include(":Ui:Templates")
+include(":Ui")
+include(":Libraries:JsonParser")

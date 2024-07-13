@@ -4,7 +4,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-abstract class RpAndroidBasePlugin(private val androidPluginId: String) : Plugin<Project> {
+internal abstract class RpAndroidBasePlugin(private val androidPluginId: String) : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {

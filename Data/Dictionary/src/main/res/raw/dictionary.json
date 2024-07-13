@@ -1,0 +1,596 @@
+{
+  "wordList": [
+    {
+      "writing": "dictionary",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈdɪk.ʃᵊn.ᵊr.i/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "can",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/kæn/",
+            "weakFormList": [
+              "/kən/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "pneumonoultramicroscopicsilicovolcanoconiosis",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "word",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/wɜːd/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "man",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/mæn/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "men",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/men/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "woman",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈwʊm.ən/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "women",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈwɪm.ɪn/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "from",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/frɒm/",
+            "weakFormList": [
+              "/frəm/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "to",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/tuː/",
+            "weakFormList": [
+              "/tʊ/",
+              "/tu/",
+              "/tə/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "where",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/weəʳ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "the",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ðiː/",
+            "weakFormList": [
+              "/ðə/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "at",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/æt/",
+            "weakFormList": [
+              "/ət/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "but",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/bʌt/",
+            "weakFormList": [
+              "/bət/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "i",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/aɪ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "you",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/juː/",
+            "weakFormList": [
+              "/jə/",
+              "/jʊ/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "he",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/hiː/",
+            "weakFormList": [
+              "/hi/",
+              "/i/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "she",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ʃiː/",
+            "weakFormList": [
+              "/ʃi/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "we",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/wiː/",
+            "weakFormList": [
+              "/wi/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "they",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ðeɪ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "a",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/eɪ/",
+            "weakFormList": [
+              "/ə/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "of",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ɒv/",
+            "weakFormList": [
+              "/əv/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "some",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/sʌm/",
+            "weakFormList": [
+              "/səm/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "love",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/lʌv/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "one",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/wʌn/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "hour",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/aʊəʳ/",
+            "weakFormList": [
+              "//"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "am",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/æm/",
+            "weakFormList": [
+              "/əm/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "are",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ɑːʳ/",
+            "weakFormList": [
+              "/əʳ/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "is",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ɪz/",
+            "weakFormList": [
+              "/z/",
+              "/s/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "that",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ðæt/",
+            "weakFormList": [
+              "/ðət/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "here",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/hɪəʳ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "integer",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈɪn.tɪ.dʒəʳ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "together",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/təˈɡeð.əʳ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "forever",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/fəˈre.vər/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "come",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/kʌm/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "data",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈdeɪ.tə/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "manor",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈmæn.əʳ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "manner",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈmæn.əʳ/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "better",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈbet.ər/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "wander",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈwɒn.dər/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "wonder",
+      "wordClassList": [
+        {
+          "type": "UNDEFINED",
+          "ipaWriting": {
+            "strongForm": "/ˈwʌn.dər/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "record",
+      "wordClassList": [
+        {
+          "type": "VERB",
+          "ipaWriting": {
+            "strongForm": "/rɪˈkɔːd/"
+          }
+        },
+        {
+          "type": "NOUN",
+          "ipaWriting": {
+            "strongForm": "/ˈrek.ɔːd/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "calm",
+      "wordClassList": [
+        {
+          "type": "ADJECTIVE",
+          "ipaWriting": {
+            "strongForm": "/kɑːm/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "salmon",
+      "wordClassList": [
+        {
+          "type": "NOUN",
+          "ipaWriting": {
+            "strongForm": "/ˈsæm.ən/"
+          }
+        }
+      ]
+    },
+    {
+      "writing": "should",
+      "wordClassList": [
+        {
+          "type": "MODAL_VERB",
+          "ipaWriting": {
+            "strongForm": "/ʃʊd/",
+            "weakFormList": [
+              "/ʃəd/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "could",
+      "wordClassList": [
+        {
+          "type": "MODAL_VERB",
+          "ipaWriting": {
+            "strongForm": "/kʊd/",
+            "weakFormList": [
+              "/kəd/"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "writing": "would",
+      "wordClassList": [
+        {
+          "type": "MODAL_VERB",
+          "ipaWriting": {
+            "strongForm": "/wʊd/",
+            "weakFormList": [
+              "/wəd/",
+              "/əd/"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

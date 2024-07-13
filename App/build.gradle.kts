@@ -1,5 +1,5 @@
 plugins {
-    id("RpApplication")
+    id("RpAndroidApplication")
     id("RpHilt")
     id("RpCompose")
 }
@@ -15,12 +15,17 @@ android {
 }
 
 dependencies {
+    // Features
+    implementation(projects.features.home)
+    // Data
+    implementation(projects.data.core)
+    implementation(projects.data.dictionary)
+    // Domain
+    implementation(projects.domain)
     // Libraries
-    implementation(project(":Libraries:Logger"))
+    implementation(projects.libraries.logger)
     // Ui
-    implementation(project(":Ui:Molecules"))
-    implementation(project(":Ui:Organisms"))
-    implementation(project(":Ui:Templates"))
+    implementation(projects.ui)
 
     implementation(libs.androidx.activity.compose)
 }
