@@ -6,12 +6,10 @@ import org.gradle.kotlin.dsl.dependencies
 
 internal fun Project.applyCompose() {
     android<CommonExtension<*, *, *, *, *, *>> {
+        plugins.apply("org.jetbrains.kotlin.plugin.compose")
+
         buildFeatures {
             compose = true
-        }
-
-        composeOptions {
-            kotlinCompilerExtensionVersion = "1.5.1"
         }
     }
 
