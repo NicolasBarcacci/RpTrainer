@@ -15,7 +15,9 @@ android {
 
 dependencies {
     // Features
+    implementation(projects.features.core)
     implementation(projects.features.home)
+    implementation(projects.features.main)
     // Data
     implementation(projects.data.core)
     implementation(projects.data.dictionary)
