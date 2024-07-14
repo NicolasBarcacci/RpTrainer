@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.meteordesign.domain.usecases.GetWordOfTheDayUseCase
 import fr.meteordesign.features.home.mappers.toWordOfTheDayUiModel
+import fr.meteordesign.libraries.logger.RpLogger
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -30,5 +31,9 @@ internal class HomeViewModel @Inject constructor(
                     .toWordOfTheDayUiModel()
             )
         }
+    }
+
+    fun onNavigationClick() {
+        RpLogger.d("Click")
     }
 }

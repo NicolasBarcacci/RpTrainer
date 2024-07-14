@@ -10,5 +10,8 @@ internal fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    HomeContent(state)
+    HomeContent(
+        state = state,
+        onNavigationPress = viewModel::onNavigationClick,
+    )
 }
