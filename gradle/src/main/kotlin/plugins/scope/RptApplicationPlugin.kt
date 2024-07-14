@@ -4,7 +4,6 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import plugins.extensions.applyAndroidHilt
 import plugins.extensions.applyCompose
-import plugins.extensions.applyComposeActivity
 import plugins.extensions.applyComposeNavigation
 
 internal abstract class RptApplicationPlugin : Plugin<Project> {
@@ -13,7 +12,6 @@ internal abstract class RptApplicationPlugin : Plugin<Project> {
             applyAndroidHilt()
             applyCompose()
             applyComposeNavigation()
-            applyComposeActivity()
         }
     }
 }
