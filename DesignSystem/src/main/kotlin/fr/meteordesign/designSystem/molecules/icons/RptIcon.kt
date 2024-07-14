@@ -13,6 +13,7 @@ import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.images.RptImage
 import fr.meteordesign.designSystem.atoms.paddings.RptPadding
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
 import fr.meteordesign.designSystem.molecules.palettes.RptPalette
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
@@ -22,13 +23,13 @@ fun RptIcon(
     modifier: Modifier = Modifier,
     style: RptIconStyle,
     image: RptImage,
-    contentDescription: String?,
+    contentDescription: RptString?,
 ) {
     Icon(
         modifier = modifier
             .size(style.dp()),
         imageVector = image.imageVector(),
-        contentDescription = contentDescription,
+        contentDescription = contentDescription?.string(),
         tint = RptPalette.Icon.color(),
     )
 }

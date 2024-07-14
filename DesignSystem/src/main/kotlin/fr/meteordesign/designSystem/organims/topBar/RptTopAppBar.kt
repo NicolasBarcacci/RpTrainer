@@ -1,6 +1,5 @@
 package fr.meteordesign.designSystem.organims.topBar
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -9,25 +8,28 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import fr.meteordesign.designSystem.R
 import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.elevations.RptElevation
 import fr.meteordesign.designSystem.atoms.images.RptImage
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
 import fr.meteordesign.designSystem.molecules.buttons.RptIconButton
 import fr.meteordesign.designSystem.molecules.palettes.RptPalette
-import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
 import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.texts.RptTextStyle
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
+import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDayUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDayUiModelPreviewProvider
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RptTopAppBar(
     modifier: Modifier = Modifier,
-    @StringRes titleResId: Int,
     navigationMode: RptTopAppBarNavigationMode = RptTopAppBarNavigationMode.None,
+    title: RptString,
     onNavigationPress: () -> Unit = {},
 ) {
     Surface(
@@ -37,8 +39,8 @@ fun RptTopAppBar(
         TopAppBar(
             title = {
                 RptText(
-                    style = RpTextStyle.Title,
-                    text = stringResource(id = titleResId),
+                    style = RptTextStyle.Title,
+                    text = title,
                 )
             },
             navigationIcon = {
@@ -64,15 +66,15 @@ private fun NavigationIcon(
         RptTopAppBarNavigationMode.Drawer -> {
             RptIconButton(
                 image = RptImage.Drawer,
-                contentDescription = "TODO",
+                contentDescription = RptString.Text("TODO"),
                 onClick = onNavigationClick,
             )
         }
 
         RptTopAppBarNavigationMode.Back -> {
             RptIconButton(
-                image = RptImage.Drawer,
-                contentDescription = "TODO",
+                image = RptImage.ArrowBack,
+                contentDescription = RptString.Text("TODO"),
                 onClick = onNavigationClick,
             )
         }
@@ -81,7 +83,10 @@ private fun NavigationIcon(
 
 @Composable
 @RptPreview
-private fun Preview() {
+private fun Preview(
+    @PreviewParameter(RptTopAppBarNavigationModePreviewProvider::class)
+    rptTopAppBarNavigationMode: RptTopAppBarNavigationMode,
+) {
     RptTheme {
         RptBackground(
             modifier = Modifier
@@ -89,8 +94,8 @@ private fun Preview() {
                 .height(DefaultPreviewSize),
         ) {
             RptTopAppBar(
-                titleResId = R.string.app_name,
-                navigationMode = RptTopAppBarNavigationMode.Drawer,
+                navigationMode = rptTopAppBarNavigationMode,
+                title = RptString.Android(R.string.app_name),
             )
         }
     }

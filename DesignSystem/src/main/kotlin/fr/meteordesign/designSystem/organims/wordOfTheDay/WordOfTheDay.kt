@@ -8,22 +8,21 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import fr.meteordesign.designSystem.R
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.paddings.RptPadding
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
 import fr.meteordesign.designSystem.molecules.cards.RptCard
 import fr.meteordesign.designSystem.molecules.spacers.RptSpacer
 import fr.meteordesign.designSystem.molecules.spacers.RptSpacerSize
 import fr.meteordesign.designSystem.molecules.spacers.RptSpacerStyle
-import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
 import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.texts.RptTextStyle
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDayUiModel.WordClass
+import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDayUiModel.WordClass.IpaWriting
 
 @Composable
 fun WordOfTheDay(
@@ -50,14 +49,14 @@ fun WordOfTheDay(
 
 @Composable
 private fun HeaderSection(
-    writing: String,
+    writing: RptString,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         RptText(
-            text = stringResource(R.string.word_of_the_day),
-            style = RpTextStyle.Normal,
+            text = RptString.Android(R.string.word_of_the_day),
+            style = RptTextStyle.Normal,
         )
         RptSpacer(
             style = RptSpacerStyle.Vertical,
@@ -65,7 +64,7 @@ private fun HeaderSection(
         )
         RptText(
             text = writing,
-            style = RpTextStyle.LargeTitle,
+            style = RptTextStyle.LargeTitle,
         )
         RptSpacer(
             style = RptSpacerStyle.Vertical,
@@ -76,7 +75,7 @@ private fun HeaderSection(
 
 @Composable
 private fun IpaWritingSection(
-    wordClassList: List<WordClassUiModel>,
+    wordClassList: List<WordClass>,
 ) {
     Row(
         modifier = Modifier
@@ -91,13 +90,16 @@ private fun IpaWritingSection(
             ) {
                 if (wordClassList.size > 1) {
                     RptText(
-                        style = RpTextStyle.Normal,
-                        text = stringResource(id = it.labelResId),
+                        style = RptTextStyle.Normal,
+                        text = it.label,
                     )
                 }
                 when (it.ipaWriting) {
-                    is IpaWritingUiModel.Strong -> IpaWriting(ipaWriting = it.ipaWriting)
-                    is IpaWritingUiModel.WeakStrong -> IpaWriting(ipaWriting = it.ipaWriting)
+                    is IpaWriting.Strong ->
+                        IpaWriting(ipaWriting = it.ipaWriting)
+
+                    is IpaWriting.WeakStrong ->
+                        IpaWriting(ipaWriting = it.ipaWriting)
                 }
             }
         }
@@ -105,15 +107,15 @@ private fun IpaWritingSection(
 }
 
 @Composable
-fun IpaWriting(ipaWriting: IpaWritingUiModel.Strong) {
+fun IpaWriting(ipaWriting: IpaWriting.Strong) {
     RptText(
-        style = RpTextStyle.Title,
+        style = RptTextStyle.Title,
         text = ipaWriting.strongForm,
     )
 }
 
 @Composable
-fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
+fun IpaWriting(ipaWriting: IpaWriting.WeakStrong) {
     Row {
         Column(
             modifier = Modifier
@@ -122,12 +124,12 @@ fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             RptText(
-                style = RpTextStyle.Normal,
-                text = stringResource(id = R.string.word_form_weak),
+                style = RptTextStyle.Normal,
+                text = RptString.Android(R.string.word_form_weak),
             )
             ipaWriting.weakFormList.forEach {
                 RptText(
-                    style = RpTextStyle.Title,
+                    style = RptTextStyle.Title,
                     text = it,
                 )
             }
@@ -139,11 +141,11 @@ fun IpaWriting(ipaWriting: IpaWritingUiModel.WeakStrong) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             RptText(
-                style = RpTextStyle.Normal,
-                text = stringResource(id = R.string.word_form_strong),
+                style = RptTextStyle.Normal,
+                text = RptString.Android(R.string.word_form_strong),
             )
             RptText(
-                style = RpTextStyle.Title,
+                style = RptTextStyle.Title,
                 text = ipaWriting.strongForm,
             )
         }

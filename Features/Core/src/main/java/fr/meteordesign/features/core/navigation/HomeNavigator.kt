@@ -1,4 +1,4 @@
-package fr.meteordesign.features.home.navigation
+package fr.meteordesign.features.core.navigation
 
 import androidx.navigation.NavGraphBuilder
 import kotlinx.serialization.Serializable

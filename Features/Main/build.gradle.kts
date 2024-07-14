@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "fr.meteordesign.features.home"
+    namespace = "fr.meteordesign.features.main"
 }
 
 dependencies {

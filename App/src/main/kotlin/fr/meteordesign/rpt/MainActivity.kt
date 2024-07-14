@@ -7,23 +7,23 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
-import fr.meteordesign.features.home.navigation.HomeNavigator
+import fr.meteordesign.features.core.navigation.MainNavigator
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var homeNavigator: HomeNavigator
+    lateinit var mainNavigator: MainNavigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             RptTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = homeNavigator.route) {
-                    with(homeNavigator) {
-                        buildHomeComposable()
+                NavHost(navController = navController, startDestination = mainNavigator.route) {
+                    with(mainNavigator) {
+                        buildMainComposable()
                     }
                 }
             }

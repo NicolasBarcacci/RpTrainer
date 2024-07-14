@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.images.RptImage
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
 import fr.meteordesign.designSystem.molecules.icons.RptIcon
 import fr.meteordesign.designSystem.molecules.icons.RptIconStyle
@@ -19,7 +20,7 @@ import fr.meteordesign.designSystem.molecules.themes.RptTheme
 fun RptIconButton(
     modifier: Modifier = Modifier,
     image: RptImage,
-    contentDescription: String,
+    contentDescription: RptString,
     onClick: () -> Unit,
 ) {
     IconButton(
@@ -49,7 +50,7 @@ private fun Preview() {
             ) {
                 RptIconButton(
                     image = RptImage.Android,
-                    contentDescription = "",
+                    contentDescription = RptString.Text(""),
                     onClick = {},
                 )
             }

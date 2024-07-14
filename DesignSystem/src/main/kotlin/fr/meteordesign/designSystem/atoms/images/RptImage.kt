@@ -20,9 +20,10 @@ import fr.meteordesign.designSystem.atoms.paddings.RptPadding
 enum class RptImage(
     @DrawableRes private val value: Int,
 ) {
-    Android(R.drawable.ic_android),
-    Drawer(R.drawable.ic_drawer),
-    ArrowBack(R.drawable.ic_arrow_back);
+    Android(R.drawable.ic_rounded_android),
+    Drawer(R.drawable.ic_rounded_drawer),
+    ArrowBack(R.drawable.ic_rounded_arrow_back),
+    Home(R.drawable.ic_outline_home);
 
     @Composable
     fun imageVector(): ImageVector =

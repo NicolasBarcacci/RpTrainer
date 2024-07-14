@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">RP Trainer</string>
     <string name="word_of_the_day">Word of the day</string>
+    <string name="navigation_item_home">Home</string>
 </resources>
