@@ -19,6 +19,7 @@ fun MainContent(
     learningNavigator: LearningNavigator,
     state: MainUiState,
     onNavigationBarItemClick: (Int) -> Unit,
+    onNavigateToIpaChar: () -> Unit,
 ) {
     RptScaffold(
         modifier = modifier,
@@ -34,7 +35,10 @@ fun MainContent(
                 buildHomeComposable(viewModelStoreOwner)
             }
             with(learningNavigator) {
-                buildLearningComposable(viewModelStoreOwner)
+                buildLearningComposable(
+                    viewModelStoreOwner = viewModelStoreOwner,
+                    onNavigateToIpaChar = onNavigateToIpaChar,
+                )
             }
         }
     }

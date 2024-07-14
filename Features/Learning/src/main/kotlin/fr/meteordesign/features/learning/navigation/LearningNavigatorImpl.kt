@@ -12,10 +12,12 @@ internal class LearningNavigatorImpl @Inject constructor() : LearningNavigator {
 
     override fun NavGraphBuilder.buildLearningComposable(
         viewModelStoreOwner: ViewModelStoreOwner,
+        onNavigateToIpaChar: () -> Unit,
     ) {
         composable<LearningNavigator.Route> {
             LearningScreen(
                 viewModel = hiltViewModel(viewModelStoreOwner),
+                onNavigateToIpaChar = onNavigateToIpaChar,
             )
         }
     }
