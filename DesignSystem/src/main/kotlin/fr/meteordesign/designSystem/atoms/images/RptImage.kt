@@ -21,9 +21,10 @@ enum class RptImage(
     @DrawableRes private val value: Int,
 ) {
     Android(R.drawable.ic_rounded_android),
-    Drawer(R.drawable.ic_rounded_drawer),
     ArrowBack(R.drawable.ic_rounded_arrow_back),
-    Home(R.drawable.ic_outline_home);
+    Drawer(R.drawable.ic_rounded_drawer),
+    Home(R.drawable.ic_outline_home),
+    School(R.drawable.ic_outline_school);
 
     @Composable
     fun imageVector(): ImageVector =

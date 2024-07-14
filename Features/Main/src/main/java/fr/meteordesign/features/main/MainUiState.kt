@@ -10,5 +10,6 @@ data class MainUiState(
     sealed interface Navigation {
         data object None : Navigation
         data object Home : Navigation
+        data object Learning : Navigation
     }
 }

@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = mainNavigator.route) {
                     with(mainNavigator) {
-                        buildMainComposable()
+                        buildMainComposable(this@MainActivity)
                     }
                 }
             }

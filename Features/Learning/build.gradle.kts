@@ -8,6 +8,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.features.core)
     implementation(projects.domain)
     implementation(projects.designSystem)
     implementation(projects.libraries.logger)
