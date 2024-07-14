@@ -2,87 +2,85 @@ package fr.meteordesign.designSystem.organims.wordOfTheDay
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import fr.meteordesign.designSystem.R
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiModel
+import fr.meteordesign.designSystem.atoms.strings.RptString
 
 internal class WordOfTheDayUiModelPreviewProvider :
     PreviewParameterProvider<WordOfTheDayUiModel> {
     override val values = sequenceOf(
         WordOfTheDayUiModel(
-            writing = "dictionary",
+            writing = RptString.Text("dictionary"),
             wordClassList = listOf(
-                WordClassUiModel(
-                    labelResId = R.string.word_type_undefined,
-                    ipaWriting = IpaWritingUiModel.Strong(
-                        strongForm = "/ˈdɪk.ʃᵊn.ᵊr.i/"
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_undefined),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.Strong(
+                        strongForm = RptString.Text("/ˈdɪk.ʃᵊn.ᵊr.i/"),
                     ),
                 ),
             ),
         ),
         WordOfTheDayUiModel(
-            writing = "pneumonoultramicroscopicsilicovolcanoconiosis",
+            writing = RptString.Text("pneumonoultramicroscopicsilicovolcanoconiosis"),
             wordClassList = listOf(
-                WordClassUiModel(
-                    labelResId = R.string.word_type_undefined,
-                    ipaWriting = IpaWritingUiModel.Strong(
-                        strongForm = "/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/",
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_undefined),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.Strong(
+                        strongForm = RptString.Text("/njuːˌməʊ.nəʊˌʌl.trə.maɪ.krəˌskɒp.ɪkˌsɪl.ɪ.kəʊ.vɒl.keɪ.nəʊ.kɒn.iˈəʊ.sɪs/"),
                     ),
                 ),
             ),
         ),
         WordOfTheDayUiModel(
-            writing = "you",
+            writing = RptString.Text("you"),
             wordClassList = listOf(
-                WordClassUiModel(
-                    labelResId = R.string.word_type_undefined,
-                    ipaWriting = IpaWritingUiModel.WeakStrong(
-                        strongForm = "/juː/",
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_undefined),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.WeakStrong(
+                        strongForm = RptString.Text("/juː/"),
                         weakFormList = listOf(
-                            "/jə/",
-                            "/jʊ/",
+                            RptString.Text("/jə/"),
+                            RptString.Text("/jʊ/"),
                         ),
                     ),
                 ),
             ),
         ),
         WordOfTheDayUiModel(
-            writing = "record",
+            writing = RptString.Text("record"),
             wordClassList = listOf(
-                WordClassUiModel(
-                    labelResId = R.string.word_type_noun,
-                    ipaWriting = IpaWritingUiModel.Strong(
-                        strongForm = "/ˈrek.ɔːd/",
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_noun),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.Strong(
+                        strongForm = RptString.Text("/ˈrek.ɔːd/"),
                     ),
                 ),
-                WordClassUiModel(
-                    labelResId = R.string.word_type_verb,
-                    ipaWriting = IpaWritingUiModel.Strong(
-                        strongForm = "/rɪˈkɔːd/",
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_verb),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.Strong(
+                        strongForm = RptString.Text("/rɪˈkɔːd/"),
                     ),
                 ),
             ),
         ),
         WordOfTheDayUiModel(
-            writing = "Edge case",
+            writing = RptString.Text("Edge case"),
             wordClassList = listOf(
-                WordClassUiModel(
-                    labelResId = R.string.word_type_undefined,
-                    ipaWriting = IpaWritingUiModel.WeakStrong(
-                        strongForm = "dolor",
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_undefined),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.WeakStrong(
+                        strongForm = RptString.Text("dolor"),
                         weakFormList = listOf(
-                            "lorem",
-                            "ipsum",
+                            RptString.Text("lorem"),
+                            RptString.Text("ipsum"),
                         ),
                     ),
                 ),
-                WordClassUiModel(
-                    labelResId = R.string.word_type_undefined,
-                    ipaWriting = IpaWritingUiModel.WeakStrong(
-                        strongForm = "dolor",
+                WordOfTheDayUiModel.WordClass(
+                    label = RptString.Android(R.string.word_type_undefined),
+                    ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.WeakStrong(
+                        strongForm = RptString.Text("dolor"),
                         weakFormList = listOf(
-                            "lorem",
-                            "ipsum",
+                            RptString.Text("lorem"),
+                            RptString.Text("ipsum"),
                         ),
                     ),
                 ),

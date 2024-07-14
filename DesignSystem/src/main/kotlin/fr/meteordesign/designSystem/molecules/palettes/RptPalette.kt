@@ -13,8 +13,9 @@ import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem._common.LocalIsInDarkTheme
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.colors.RptColor
-import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.texts.RptTextStyle
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
 
 internal enum class RptPalette(
@@ -53,10 +54,16 @@ private fun Preview(
         ) {
             Column {
                 RptTheme(isInDarkTheme = false) {
-                    RptText(style = RpTextStyle.Normal, text = rptPalette.name)
+                    RptText(
+                        style = RptTextStyle.Normal,
+                        text = RptString.Text(rptPalette.name),
+                    )
                 }
                 RptTheme(isInDarkTheme = true) {
-                    RptText(style = RpTextStyle.Normal, text = rptPalette.name)
+                    RptText(
+                        style = RptTextStyle.Normal,
+                        text = RptString.Text(rptPalette.name),
+                    )
                 }
             }
         }

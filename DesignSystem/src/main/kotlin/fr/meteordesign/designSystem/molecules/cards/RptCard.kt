@@ -12,13 +12,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem._common.previews.RptPreview
-import fr.meteordesign.designSystem.molecules.palettes.RptPalette
 import fr.meteordesign.designSystem.atoms.elevations.RptElevation
 import fr.meteordesign.designSystem.atoms.paddings.RptPadding
 import fr.meteordesign.designSystem.atoms.shapes.RptShape
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
-import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
+import fr.meteordesign.designSystem.molecules.palettes.RptPalette
 import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.texts.RptTextStyle
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
 
 @Composable
@@ -59,7 +60,10 @@ private fun Preview() {
                         .fillMaxSize(),
                     contentAlignment = Alignment.Center,
                 ) {
-                    RptText(style = RpTextStyle.Normal, text = "RpCard")
+                    RptText(
+                        style = RptTextStyle.Normal,
+                        text = RptString.Text("RpCard"),
+                    )
                 }
             }
         }

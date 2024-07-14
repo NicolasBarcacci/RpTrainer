@@ -6,11 +6,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.images.RptImage
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.icons.RptIcon
 import fr.meteordesign.designSystem.molecules.icons.RptIconStyle
 import fr.meteordesign.designSystem.molecules.palettes.RptPalette
-import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
 import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.texts.RptTextStyle
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
 
 @Composable
@@ -34,7 +35,7 @@ fun RptNavigationBar(
                 },
                 label = {
                     RptText(
-                        style = RpTextStyle.Normal,
+                        style = RptTextStyle.Normal,
                         text = item.label,
                     )
                 },
@@ -54,8 +55,8 @@ private fun Preview() {
                 itemList = listOf(
                     RptNavigationBarUiModel.Item(
                         image = RptImage.Android,
-                        contentDescription = "",
-                        label = "Android",
+                        contentDescription = RptString.Text(""),
+                        label = RptString.Text("Android"),
                     )
                 ),
                 selectedIndex = 0,

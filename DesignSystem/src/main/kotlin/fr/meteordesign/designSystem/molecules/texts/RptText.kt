@@ -12,18 +12,19 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.paddings.RptPadding
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.backgrounds.RptBackground
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
 
 @Composable
 fun RptText(
     modifier: Modifier = Modifier,
-    style: RpTextStyle,
-    text: String,
+    style: RptTextStyle,
+    text: RptString,
 ) {
     Text(
         modifier = modifier,
-        text = text,
+        text = text.string(),
         color = style.color(),
         fontSize = style.fontSize(),
     )
@@ -33,7 +34,7 @@ fun RptText(
 @RptPreview
 private fun Preview(
     @PreviewParameter(RptTextStylePreviewProvider::class)
-    rpTextStyle: RpTextStyle,
+    rptTextStyle: RptTextStyle,
 ) {
     RptTheme {
         RptBackground(
@@ -46,7 +47,10 @@ private fun Preview(
                     .padding(RptPadding.Medium.dp()),
                 contentAlignment = Alignment.CenterStart,
             ) {
-                RptText(style = rpTextStyle, text = rpTextStyle.name)
+                RptText(
+                    style = rptTextStyle,
+                    text = RptString.Text(rptTextStyle.name),
+                )
             }
         }
     }

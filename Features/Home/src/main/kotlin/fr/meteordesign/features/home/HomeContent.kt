@@ -8,13 +8,12 @@ import androidx.compose.ui.Modifier
 import fr.meteordesign.designSystem.R
 import fr.meteordesign.designSystem._common.previews.RptPreview
 import fr.meteordesign.designSystem.atoms.paddings.RptPadding
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.scaffolds.RptScaffold
 import fr.meteordesign.designSystem.organims.topBar.RptTopAppBar
 import fr.meteordesign.designSystem.organims.topBar.RptTopAppBarNavigationMode
 import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDay
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.IpaWritingUiModel
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordClassUiModel
-import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiModel
+import fr.meteordesign.designSystem.organims.wordOfTheDay.WordOfTheDayUiModel
 
 @Composable
 internal fun HomeContent(
@@ -25,7 +24,7 @@ internal fun HomeContent(
         modifier = modifier,
         topBar = {
             RptTopAppBar(
-                titleResId = R.string.app_name,
+                title = RptString.Android(R.string.app_name),
                 navigationMode = RptTopAppBarNavigationMode.None,
             )
         }
@@ -54,11 +53,13 @@ private fun Preview() {
     HomeContent(
         state = HomeUiState(
             wordOfTheDayUiModel = WordOfTheDayUiModel(
-                writing = "Lorem Ipsum",
+                writing = RptString.Text("Lorem Ipsum"),
                 wordClassList = listOf(
-                    WordClassUiModel(
-                        labelResId = R.string.word_type_undefined,
-                        ipaWriting = IpaWritingUiModel.Strong("/Lorem Ipsum/"),
+                    WordOfTheDayUiModel.WordClass(
+                        label = RptString.Android(R.string.word_type_undefined),
+                        ipaWriting = WordOfTheDayUiModel.WordClass.IpaWriting.Strong(
+                            RptString.Text("/Lorem Ipsum/"),
+                        ),
                     )
                 )
             ),

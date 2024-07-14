@@ -3,6 +3,7 @@ package fr.meteordesign.features.main
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.meteordesign.designSystem.atoms.images.RptImage
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.organims.navigationBars.RptNavigationBarUiModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -46,8 +47,8 @@ class MainViewModel @Inject constructor() : ViewModel() {
             itemList = listOf(
                 RptNavigationBarUiModel.Item(
                     image = RptImage.Home,
-                    contentDescription = "TODO",
-                    label = "Home",
+                    contentDescription = RptString.Text("TODO"),
+                    label = RptString.Android(fr.meteordesign.designSystem.R.string.navigation_item_home),
                 )
             ),
             selectedIndex = 0,

@@ -17,8 +17,9 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import fr.meteordesign.designSystem._common.DefaultPreviewSize
 import fr.meteordesign.designSystem.atoms.colors.RptColor
-import fr.meteordesign.designSystem.molecules.texts.RpTextStyle
+import fr.meteordesign.designSystem.atoms.strings.RptString
 import fr.meteordesign.designSystem.molecules.texts.RptText
+import fr.meteordesign.designSystem.molecules.texts.RptTextStyle
 
 @Composable
 fun RptSpacer(
@@ -90,8 +91,8 @@ private fun PreviewHorizontalContent(
             contentAlignment = Alignment.Center,
         ) {
             RptText(
-                style = RpTextStyle.Normal,
-                text = rpSpacerData.rptSpacerStyle.name,
+                style = RptTextStyle.Normal,
+                text = RptString.Text(rpSpacerData.rptSpacerStyle.name),
             )
         }
         RptSpacer(
@@ -106,8 +107,8 @@ private fun PreviewHorizontalContent(
             contentAlignment = Alignment.Center,
         ) {
             RptText(
-                style = RpTextStyle.Normal,
-                text = rpSpacerData.rptSpacerSize.name,
+                style = RptTextStyle.Normal,
+                text = RptString.Text(rpSpacerData.rptSpacerSize.name),
             )
         }
     }
@@ -129,8 +130,8 @@ private fun PreviewVerticalContent(
             contentAlignment = Alignment.Center,
         ) {
             RptText(
-                style = RpTextStyle.Normal,
-                text = rpSpacerData.rptSpacerStyle.name,
+                style = RptTextStyle.Normal,
+                text = RptString.Text(rpSpacerData.rptSpacerStyle.name),
             )
         }
         RptSpacer(
@@ -145,8 +146,8 @@ private fun PreviewVerticalContent(
             contentAlignment = Alignment.Center,
         ) {
             RptText(
-                style = RpTextStyle.Normal,
-                text = rpSpacerData.rptSpacerSize.name,
+                style = RptTextStyle.Normal,
+                text = RptString.Text(rpSpacerData.rptSpacerSize.name),
             )
         }
     }
