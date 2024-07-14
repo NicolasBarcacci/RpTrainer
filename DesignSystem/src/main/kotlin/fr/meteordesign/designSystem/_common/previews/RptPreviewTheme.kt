@@ -5,12 +5,12 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @Preview(
     name = "Dark mode",
-    group = "Theme",
+    group = "Themes",
     uiMode = Configuration.UI_MODE_NIGHT_YES
 )
 @Preview(
     name = "Light mode",
-    group = "Theme",
+    group = "Themes",
     uiMode = Configuration.UI_MODE_NIGHT_NO
 )
 annotation class RptPreviewTheme
