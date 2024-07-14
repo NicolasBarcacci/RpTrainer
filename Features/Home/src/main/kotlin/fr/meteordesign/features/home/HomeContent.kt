@@ -3,6 +3,8 @@ package fr.meteordesign.features.home
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.DrawerState
+import androidx.compose.material3.DrawerValue
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.meteordesign.designSystem.R
@@ -27,7 +29,7 @@ internal fun HomeContent(
                 title = RptString.Android(R.string.app_name),
                 navigationMode = RptTopAppBarNavigationMode.None,
             )
-        }
+        },
     ) { padding ->
         Box(
             modifier = Modifier

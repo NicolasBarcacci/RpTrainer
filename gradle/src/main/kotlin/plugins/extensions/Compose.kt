@@ -16,6 +16,7 @@ internal fun Project.applyCompose() {
     dependencies {
         implementation(platform(libs.library("compose-bom")))
         implementation(libs.library("compose-material3"))
+        implementation(libs.library("compose-activity"))
         implementation(libs.library("compose-uiToolingPreview"))
         debugImplementation(libs.library("compose-uiTooling"))
     }
@@ -28,11 +29,5 @@ internal fun Project.applyComposeNavigation() {
         implementation(libs.library("kotlinx-serialization-json"))
         implementation(libs.library("compose-navigation"))
         implementation(libs.library("compose-navigation-hilt"))
-    }
-}
-
-internal fun Project.applyComposeActivity() {
-    dependencies {
-        implementation(libs.library("compose-activity"))
     }
 }
