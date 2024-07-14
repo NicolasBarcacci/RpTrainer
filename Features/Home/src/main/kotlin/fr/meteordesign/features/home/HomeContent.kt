@@ -20,7 +20,6 @@ import fr.meteordesign.designSystem.organims.wordOfTheDay.models.WordOfTheDayUiM
 internal fun HomeContent(
     modifier: Modifier = Modifier,
     state: HomeUiState,
-    onNavigationPress: () -> Unit,
 ) {
     RptScaffold(
         modifier = modifier,
@@ -28,7 +27,6 @@ internal fun HomeContent(
             RptTopAppBar(
                 titleResId = R.string.app_name,
                 navigationMode = RptTopAppBarNavigationMode.Drawer,
-                onNavigationPress = onNavigationPress,
             )
         }
     ) { padding ->
@@ -65,6 +63,5 @@ private fun Preview() {
                 )
             ),
         ),
-        onNavigationPress = {},
     )
 }

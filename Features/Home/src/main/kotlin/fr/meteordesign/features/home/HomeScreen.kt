@@ -12,6 +12,5 @@ internal fun HomeScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     HomeContent(
         state = state,
-        onNavigationPress = viewModel::onNavigationClick,
     )
 }
