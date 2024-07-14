@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import fr.meteordesign.designSystem.molecules.themes.RptTheme
+import fr.meteordesign.features.core.navigation.IpaChartNavigator
 import fr.meteordesign.features.core.navigation.MainNavigator
 import javax.inject.Inject
 
@@ -16,6 +17,9 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var mainNavigator: MainNavigator
 
+    @Inject
+    lateinit var ipaChartNavigator: IpaChartNavigator
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -23,7 +27,15 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = mainNavigator.route) {
                     with(mainNavigator) {
-                        buildMainComposable(this@MainActivity)
+                        buildMainComposable(
+                            viewModelStoreOwner = this@MainActivity,
+                            onNavigateToIpaChar = {
+                                navController.navigate(ipaChartNavigator.route)
+                            },
+                        )
+                    }
+                    with(ipaChartNavigator) {
+                        buildIpaChartComposable()
                     }
                 }
             }

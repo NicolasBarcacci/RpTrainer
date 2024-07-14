@@ -10,6 +10,7 @@ interface LearningNavigator {
 
     fun NavGraphBuilder.buildLearningComposable(
         viewModelStoreOwner: ViewModelStoreOwner,
+        onNavigateToIpaChar: () -> Unit,
     )
 
     @Serializable

@@ -28,7 +28,8 @@ internal enum class RptPalette(
     Separator(lightThemeColor = RptColor.BlueDarker, darkThemeColor = RptColor.White),
     TopAppBar(lightThemeColor = RptColor.White, darkThemeColor = RptColor.BlueDark),
     Icon(lightThemeColor = RptColor.Black, darkThemeColor = RptColor.White),
-    NavigationBar(lightThemeColor = RptColor.White, darkThemeColor = RptColor.BlueDark);
+    NavigationBar(lightThemeColor = RptColor.White, darkThemeColor = RptColor.BlueDark),
+    Button(lightThemeColor = RptColor.Blue, darkThemeColor = RptColor.Blue);
 
     @Composable
     fun color(): Color =

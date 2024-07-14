@@ -16,6 +16,7 @@ internal fun MainScreen(
     viewModelStoreOwner: ViewModelStoreOwner,
     homeNavigator: HomeNavigator,
     learningNavigator: LearningNavigator,
+    onNavigateToIpaChar: () -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val navController = rememberNavController()
@@ -44,5 +45,6 @@ internal fun MainScreen(
         homeNavigator = homeNavigator,
         learningNavigator = learningNavigator,
         onNavigationBarItemClick = viewModel::onNavigationItemClick,
+        onNavigateToIpaChar = onNavigateToIpaChar,
     )
 }

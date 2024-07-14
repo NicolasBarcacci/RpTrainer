@@ -17,6 +17,7 @@ dependencies {
     // Features
     implementation(projects.features.core)
     implementation(projects.features.home)
+    implementation(projects.features.ipaChart)
     implementation(projects.features.learning)
     implementation(projects.features.main)
     // Data

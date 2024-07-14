@@ -23,7 +23,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "RpTrainer"
 include(":App")
+include(":Features:Core")
 include(":Features:Home")
+include(":Features:IpaChart")
 include(":Features:Learning")
 include(":Features:Main")
 include(":Data:Core")
@@ -32,4 +34,3 @@ include(":Domain")
 include(":DesignSystem")
 include(":Libraries:Logger")
 include(":Libraries:JsonParser")
-include(":Features:Core")

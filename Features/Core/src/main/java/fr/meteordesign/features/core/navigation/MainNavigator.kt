@@ -1,7 +1,6 @@
 package fr.meteordesign.features.core.navigation
 
 import androidx.lifecycle.ViewModelStoreOwner
-import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavGraphBuilder
 import kotlinx.serialization.Serializable
 
@@ -11,6 +10,7 @@ interface MainNavigator {
 
     fun NavGraphBuilder.buildMainComposable(
         viewModelStoreOwner: ViewModelStoreOwner,
+        onNavigateToIpaChar: () -> Unit,
     )
 
     @Serializable
