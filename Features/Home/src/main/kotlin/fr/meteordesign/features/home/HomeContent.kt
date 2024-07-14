@@ -26,7 +26,7 @@ internal fun HomeContent(
         topBar = {
             RptTopAppBar(
                 titleResId = R.string.app_name,
-                navigationMode = RptTopAppBarNavigationMode.Drawer,
+                navigationMode = RptTopAppBarNavigationMode.None,
             )
         }
     ) { padding ->
@@ -35,7 +35,7 @@ internal fun HomeContent(
                 .padding(padding),
         ) {
             Column {
-                state.wordOfTheDay?.let {
+                state.wordOfTheDayUiModel?.let {
                     WordOfTheDay(
                         modifier = Modifier
                             .padding(top = RptPadding.Big.dp())
@@ -53,7 +53,7 @@ internal fun HomeContent(
 private fun Preview() {
     HomeContent(
         state = HomeUiState(
-            wordOfTheDay = WordOfTheDayUiModel(
+            wordOfTheDayUiModel = WordOfTheDayUiModel(
                 writing = "Lorem Ipsum",
                 wordClassList = listOf(
                     WordClassUiModel(

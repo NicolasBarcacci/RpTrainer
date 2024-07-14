@@ -7,6 +7,7 @@ import fr.meteordesign.domain.usecases.GetWordOfTheDayUseCase
 import fr.meteordesign.features.home.mappers.toWordOfTheDayUiModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,10 +22,12 @@ internal class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            _state.value = HomeUiState(
-                wordOfTheDay = getWordOfTheDayUseCase.invoke()
-                    .toWordOfTheDayUiModel()
-            )
+            _state.update {
+                it.copy(
+                    wordOfTheDayUiModel = getWordOfTheDayUseCase.invoke()
+                        .toWordOfTheDayUiModel()
+                )
+            }
         }
     }
 }
